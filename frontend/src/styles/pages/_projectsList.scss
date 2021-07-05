@@ -1,0 +1,31 @@
+$primary-color: #3278ff;
+
+.project-list-page {
+  width: 100%;
+  height: 100%;
+
+  .main-content {
+    width: 100%;
+    height: calc(100% - 9vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .project-list-container {
+      box-sizing: border-box;
+      width: 92.5%;
+      height: 100%;
+      border-radius: 20px;
+      background-color: rgb(241, 241, 241);
+      padding: 3.5% 3%;
+
+      @import "../components/projects/list";
+      @import "../components/projects/_projectForm.scss";
+    
+    }
+  }
+}
+
+.hide {
+  display: none;
+}

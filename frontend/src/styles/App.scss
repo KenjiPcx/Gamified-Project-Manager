@@ -1,0 +1,16 @@
+// Headers
+@import './components/headers';
+
+// Navbars
+@import './components/navbar';
+
+// Custom Ui Components
+@import './components/customUiComponents/pill';
+
+// Pages
+@import './pages/projectsList';
+
+.app {
+    width: 100%;
+    height: 91.5vh;
+}

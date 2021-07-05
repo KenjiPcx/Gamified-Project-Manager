@@ -1,0 +1,20 @@
+.pill {
+  box-sizing: border-box;
+  padding: 0.35rem 0.5rem;
+  width: max-content;
+  max-height: 30px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+
+  .label {
+    font-weight: bold;
+  }
+
+  .close {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+}

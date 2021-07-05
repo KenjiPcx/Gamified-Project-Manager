@@ -1,0 +1,518 @@
+.list-header {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100vw;
+  height: 9vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2rem;
+  background-color: white;
+}
+
+.list-header .label {
+  -webkit-box-flex: 55%;
+      -ms-flex: 55%;
+          flex: 55%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.list-header .searchbar {
+  -webkit-box-flex: 45%;
+      -ms-flex: 45%;
+          flex: 45%;
+  text-align: end;
+  height: 50%;
+  border: solid black 1px;
+  border-radius: .75rem;
+  margin: 0%;
+}
+
+.list-header .searchbar .search-text {
+  width: 50%;
+  height: 100%;
+  font-size: 1rem;
+  outline: 0;
+  border: 0;
+  border-radius: 0.75rem 0 0 0.75rem;
+  padding: 0;
+}
+
+.list-header .searchbar .search-type {
+  display: inline-block;
+  width: 35%;
+  height: 100%;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+  padding: 0%;
+  padding-left: .25rem;
+  background-color: #e4e4e4;
+}
+
+.mobile-navbar {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100vw;
+  height: 8.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobile-navbar .icon {
+  width: 7.5vw;
+  height: 7.5vw;
+}
+
+.pill {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.35rem 0.5rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-height: 30px;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.2rem;
+}
+
+.pill .label {
+  font-weight: bold;
+}
+
+.pill .close {
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+.project-list-page {
+  width: 100%;
+  height: 100%;
+}
+
+.project-list-page .main-content {
+  width: 100%;
+  height: calc(100% - 9vh);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-list-page .main-content .project-list-container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 92.5%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  padding: 3.5% 3%;
+}
+
+.project-list-page .main-content .project-list-container .project-list {
+  width: 100%;
+  height: 100%;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list-controls {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list-controls .ongoing {
+  width: 27.5%;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list-controls .completed {
+  width: 65%;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list-controls .active {
+  font-weight: bold;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list-controls .add-btn {
+  width: 7.5%;
+  height: 100%;
+  text-align: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.25rem 0;
+  border-radius: 0.35rem;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list {
+  width: 100%;
+  height: 95%;
+  border-radius: 1rem;
+  overflow-y: scroll;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .hide {
+  display: none;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item {
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 20%;
+  background-color: white;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0.15rem 0.1rem #e2e2e2;
+          box-shadow: 0.15rem 0.1rem #e2e2e2;
+  position: relative;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .delete-btn {
+  position: absolute;
+  top: 8%;
+  right: 4%;
+  border: solid red;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .highlight {
+  width: 2.5%;
+  height: 100%;
+  background-color: #3278ff;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 67.5%;
+  height: 100%;
+  padding: 1rem 1.15rem;
+  padding-right: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper .project-type {
+  display: inline-block;
+  padding: 0.05rem 0.5rem;
+  font-size: 0.8rem;
+  height: 20%;
+  background-color: #3278ff;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper .project-title {
+  font-size: 1.55rem;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper .project-description {
+  font-size: 1rem;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .project-status {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  position: relative;
+  bottom: 0%;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-progress {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 28.5%;
+  height: 100%;
+  padding: 0.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-progress .CircularProgressbar-path {
+  stroke: #3278ff;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list::-webkit-scrollbar {
+  display: none;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form {
+  width: 100%;
+  height: 100%;
+  font-size: 1.1rem;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-controls {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-controls .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-controls .add-quest-title {
+  border: solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-controls .close-btn {
+  width: 7.5%;
+  height: 100%;
+  text-align: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.25rem 0;
+  border-radius: 0.35rem;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 93%;
+  background-color: white;
+  border-radius: 1rem;
+  padding-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .highlight {
+  width: 2.5%;
+  height: 100%;
+  background-color: #3278ff;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form {
+  width: 97.5%;
+  height: 100%;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .overflow-container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 87.5%;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .overflow-container::-webkit-scrollbar {
+  display: none;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .custom-form-row {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .custom-form-row .label .form-label {
+  margin: 0%;
+  margin-right: 1rem;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .custom-form-row .skill-input {
+  width: 70%;
+  height: 75%;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .custom-form-row .add-btn-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .custom-form-row .add-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  width: 70%;
+  height: 85%;
+  padding: 0 0.5rem;
+  border-radius: 0.35rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .quest-list:-moz-read-only {
+  box-sizing: border-box;
+  border: solid #cfcfcf 1px;
+  width: 85%;
+  min-height: 20%;
+  height: -moz-max-content;
+  height: max-content;
+  overflow: auto;
+  padding: 0.5rem 2rem;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .quest-list:read-only {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: solid #cfcfcf 1px;
+  width: 85%;
+  min-height: 20%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  overflow: auto;
+  padding: 0.5rem 2rem;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .pill-area {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 90%;
+  height: 20%;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .submit-btn {
+  display: block;
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.hide {
+  display: none;
+}
+
+.app {
+  width: 100%;
+  height: 91.5vh;
+}
+/*# sourceMappingURL=App.css.map */
