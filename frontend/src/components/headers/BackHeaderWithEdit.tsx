@@ -14,7 +14,7 @@ function BackHeaderWithEdit({ pageTitle, prevPageLink, edit }: BackHeaderWithEdi
         Back
       </Link>
       <div className="label label-sm">{pageTitle}</div>
-      <div className="update-btn">Edit</div>
+      <div className="update-btn" onClick={edit}>Edit</div>
     </div>
   );
 }
