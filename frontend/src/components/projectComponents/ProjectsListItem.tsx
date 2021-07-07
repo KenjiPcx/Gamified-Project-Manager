@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, TouchEvent } from "react";
 import { CircularProgressbar } from "react-circular-progressbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom";
 
 interface ProjectsListItemProps {
   title: string;
@@ -20,20 +21,47 @@ function ProjectsListItem({
   status,
   removeHandler,
 }: ProjectsListItemProps) {
+  let history = useHistory();
+  let timer: NodeJS.Timeout | null = null;
   const [showDelete, setShowDelete] = useState(false);
+  const touching = useRef(false);
 
-  const handleClick = () => {
-    setShowDelete(!showDelete);
+  const handleRedirect = () => {
+    if (showDelete) {
+      setShowDelete(false);
+    } else if (!showDelete) {
+      history.push("/project");
+    }
+  };
+
+  const handleClick = (e: TouchEvent<HTMLDivElement>) => {
+    removeHandler(title);
+  };
+
+  const handleLongPressStart = () => {
+    touching.current = true;
+    timer = setTimeout(() => {
+      if (touching.current) {
+        setShowDelete(true);
+      }
+    }, 1000);
+  };
+
+  const handleLongPressEnd = () => {
+    touching.current = false;
+    if (timer) {
+      clearTimeout(timer);
+    }
   };
 
   return (
-    <div className="projects-list-item" onClick={handleClick}>
-      <div
-        className={`${showDelete ? "delete-btn" : "hide"}`}
-        onClick={() => removeHandler(title)}
-      >
-        <FontAwesomeIcon icon={faTimes} />
-      </div>
+    <div
+      id={title}
+      className="projects-list-item"
+      onTouchStart={handleLongPressStart}
+      onTouchEnd={handleLongPressEnd}
+      onClick={handleRedirect}
+    >
       <div className="highlight"></div>
       <div className="project-info">
         <div className="wrapper">
@@ -45,6 +73,12 @@ function ProjectsListItem({
       </div>
       <div className="project-progress">
         <CircularProgressbar value={progress} text={`${progress}%`} />
+      </div>
+      <div
+        className={`${showDelete ? "delete-btn" : "hide"}`}
+        onTouchStart={(e) => handleClick(e)}
+      >
+        <FontAwesomeIcon icon={faTimes} />
       </div>
     </div>
   );

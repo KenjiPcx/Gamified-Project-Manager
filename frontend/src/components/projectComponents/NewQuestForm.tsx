@@ -77,7 +77,6 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
               type="text"
               placeholder="Enter Quest Name"
               className="form-input"
-              size="sm"
               value={questName}
               onChange={(e) => setQuestName(e.target.value)}
             />
@@ -86,11 +85,10 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
         <br />
         <br />
         <Form.Row>
-          <Col xs={4}>
+          <Col xs={5}>
             <Form.Label>Quest Type</Form.Label>
             <Form.Control
               as="select"
-              size="sm"
               value={questType}
               onChange={(e) => setQuestType(e.target.value)}
             >
@@ -102,11 +100,10 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
             </Form.Control>
           </Col>
           <Col xs={1}></Col>
-          <Col xs={4}>
+          <Col xs={5}>
             <Form.Label>Quest Diff</Form.Label>
             <Form.Control
               as="select"
-              size="sm"
               value={questDiff}
               onChange={(e) => setQuestDiff(e.target.value)}
             >
@@ -124,13 +121,12 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
         <br />
         <br />
         <Form.Row>
-          <Col xs={10}>
+          <Col xs={11}>
             <Form.Label>Quest Description</Form.Label>
             <Form.Control
               as="textarea"
               rows={3}
               placeholder="Enter Description"
-              size="sm"
               value={questDesc}
               onChange={(e) => setQuestDesc(e.target.value)}
             />
@@ -139,13 +135,12 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
         <br />
         <br />
         <Form.Row>
-          <Col xs={10}>
+          <Col xs={11}>
             <Form.Label>Quest Task</Form.Label>
             <Form.Control
               as="textarea"
               rows={1}
               placeholder="Enter Task"
-              size="sm"
               value={questTask}
               onChange={(e) => setQuestTask(e.target.value)}
             />
@@ -160,14 +155,12 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
             type="text"
             placeholder="Enter Skill Name"
             className="form-input skill-input"
-            size="sm"
             value={questSkill}
             onChange={(e) => setQuestSkill(e.target.value)}
           />
           <div className="add-btn-container">
             <Button
               variant="secondary"
-              size="sm"
               className="add-btn"
               onClick={addToSkills}
             >
@@ -196,7 +189,7 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
         className="submit-btn"
         onClick={(e) => handleSubmit(e)}
       >
-        Submit
+        Add Quest
       </Button>
     </Form>
   );

@@ -3,20 +3,21 @@
   height: 100%;
 
   .list-controls {
-    box-sizing: border-box;
-    padding: 0 1rem;
+    padding: 0 1.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
 
     .ongoing {
-      width: 27.5%;
+      width: max-content;
+      margin-right: 1rem;
     }
 
     .completed {
-      width: 65%;
+      width: max-content;
+      margin-right: auto;
     }
 
     .active {
@@ -24,20 +25,20 @@
     }
 
     .add-btn {
-      width: 7.5%;
+      width: 8.5%;
       height: 100%;
       text-align: end;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0.25rem 0;
-      border-radius: 0.35rem;
+      padding: .25rem .3rem;
+      border-radius: .35rem;
     }
   }
 
   .list {
     width: 100%;
-    height: 95%;
+    height: 92.5%;
     border-radius: 1rem;
     overflow-y: scroll;
 
@@ -48,18 +49,22 @@
     .projects-list-item {
       margin-bottom: 1rem;
       width: 100%;
-      height: 20%;
+      height: 19%;
       background-color: white;
       border-radius: 1rem;
       display: flex;
       box-shadow: 0.15rem 0.1rem rgb(226, 226, 226);
       position: relative;
+      cursor: pointer;
 
       .delete-btn {
         position: absolute;
         top: 8%;
         right: 4%;
-        border: solid red;
+        padding: 0 .1rem;
+        background-color: $danger-color;
+        color: white;
+        border-radius: .25rem;
       }
 
       .highlight {
@@ -70,10 +75,9 @@
       }
 
       .project-info {
-        box-sizing: border-box;
         width: 67.5%;
         height: 100%;
-        padding: 1rem 1.15rem;
+        padding: 1.25rem;
         padding-right: 0%;
         display: flex;
         flex-direction: column;
@@ -83,16 +87,17 @@
         .wrapper {
           width: 100%;
           height: 100%;
-          box-sizing: border-box;
 
           .project-type {
-            display: inline-block;
-            padding: 0.05rem 0.5rem;
-            font-size: 0.8rem;
+            padding: .5rem .4rem;
+            width: max-content;
             height: 20%;
             background-color: $primary-color;
             color: white;
-            border-radius: 0.5rem;
+            border-radius: .5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
 
           .project-title {
@@ -100,23 +105,27 @@
           }
 
           .project-description {
-            font-size: 1rem;
+            height: 1.2rem;
+            font-size: 1.2rem;
+            overflow-x: auto;
+          }
+
+          .project-description::-webkit-scrollbar {
+            display: none;
           }
         }
 
         .project-status {
-          font-size: 0.8rem;
+          font-size: 0.85rem;
           opacity: 0.8;
-          position: relative;
-          bottom: 0%;
         }
       }
 
       .project-progress {
-        box-sizing: border-box;
-        width: 28.5%;
+        width: 30%;
         height: 100%;
-        padding: 0.9rem;
+        padding-left: 0.5rem;
+        padding-right: 1.35rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -125,6 +134,10 @@
           stroke: $primary-color;
         }
       }
+    }
+
+    .projects-list-item:last-child {
+      margin-bottom: 0%;
     }
   }
 

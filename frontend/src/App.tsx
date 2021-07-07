@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import dashboard from "./pages/dashboard";
 import ProjectsList from "./pages/projectsList";
-import project from "./pages/project";
+import Project from "./pages/project";
 import questList from "./pages/questList";
 import quest from "./pages/quest";
 import logs from "./pages/logs";
@@ -12,7 +12,6 @@ import userPage from "./pages/userPage";
 import skillTree from "./pages/skillTree";
 import achievements from "./pages/achievements";
 
-import Header from "./components/headers/Header";
 import MobileNavbar from "./components/navbars/MobileNavbar";
 
 function App() {
@@ -22,7 +21,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={dashboard} />
           <Route path="/projectlist" component={ProjectsList} />
-          <Route path="/project" component={project} />
+          <Route path="/project" component={Project} />
           <Route path="/questlist" component={questList} />
           <Route path="/quest" component={quest} />
           <Route path="/logs" component={logs} />
@@ -31,8 +30,8 @@ function App() {
           <Route path="/skilltree" component={skillTree} />
           <Route path="/achievements" component={achievements} />
         </Switch>
+        <MobileNavbar />
       </Router>
-      <MobileNavbar />
     </div>
   );
 }

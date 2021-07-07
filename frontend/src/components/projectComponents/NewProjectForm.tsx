@@ -51,6 +51,12 @@ function NewProjectForm({
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+
+    let skills: string[] = []
+    quests.forEach((quest) => {
+      skills = [...skills, ...quest.skills]
+    })
+
     const project: ProjectObj = {
       title: projectName,
       type: projectType,
@@ -59,6 +65,8 @@ function NewProjectForm({
       dependencies: quests.map((quest) => quest.name),
       progress: 0,
       status: "Initialized Project",
+      startDate: Date.now(),
+      skillsInvolved: skills
     };
     updateProjects((prevProjects) => [...prevProjects, project]);
     toggleShow();
@@ -110,7 +118,6 @@ function NewProjectForm({
                   type="text"
                   placeholder="Enter Project Name"
                   className="form-input"
-                  size="sm"
                   value={projectName}
                   onChange={(e) => setProjectName(e.target.value)}
                 />
@@ -122,13 +129,12 @@ function NewProjectForm({
             <br />
             <br />
             <Form.Row>
-              <Col xs={9}>
+              <Col xs={11}>
                 <Form.Label>Project Description</Form.Label>
                 <Form.Control
                   as="textarea"
                   rows={2}
                   placeholder="Enter Description"
-                  size="sm"
                   value={projectDescription}
                   onChange={(e) => setProjectDescription(e.target.value)}
                 />
@@ -140,11 +146,10 @@ function NewProjectForm({
             <br />
             <br />
             <Form.Row>
-              <Col xs={4}>
+              <Col xs={5}>
                 <Form.Label>Project Type</Form.Label>
                 <Form.Control
                   as="select"
-                  size="sm"
                   value={projectType}
                   onChange={(e) => setProjectType(e.target.value)}
                 >
@@ -156,11 +161,10 @@ function NewProjectForm({
                 </Form.Control>
               </Col>
               <Col xs={1}></Col>
-              <Col xs={4}>
+              <Col xs={5}>
                 <Form.Label>Project Term</Form.Label>
                 <Form.Control
                   as="select"
-                  size="sm"
                   value={projectTerm}
                   onChange={(e) => setProjectTerm(e.target.value)}
                 >
@@ -211,7 +215,7 @@ function NewProjectForm({
             className="submit-btn"
             onClick={(e) => handleSubmit(e)}
           >
-            Submit
+            Create Project
           </Button>
         </Form>
       </div>

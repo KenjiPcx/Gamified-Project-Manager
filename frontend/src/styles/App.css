@@ -1,6 +1,4 @@
-.list-header {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.header {
   width: 100vw;
   height: 9vh;
   display: -webkit-box;
@@ -14,29 +12,26 @@
           align-items: center;
   padding: 0 2rem;
   background-color: white;
+  position: relative;
 }
 
-.list-header .label {
-  -webkit-box-flex: 55%;
-      -ms-flex: 55%;
-          flex: 55%;
+.header .label {
+  width: 55%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-.list-header .searchbar {
-  -webkit-box-flex: 45%;
-      -ms-flex: 45%;
-          flex: 45%;
+.header .searchbar {
+  width: 45%;
   text-align: end;
   height: 50%;
   border: solid black 1px;
-  border-radius: .75rem;
+  border-radius: 0.75rem;
   margin: 0%;
 }
 
-.list-header .searchbar .search-text {
+.header .searchbar .search-text {
   width: 50%;
   height: 100%;
   font-size: 1rem;
@@ -46,7 +41,7 @@
   padding: 0;
 }
 
-.list-header .searchbar .search-type {
+.header .searchbar .search-type {
   display: inline-block;
   width: 35%;
   height: 100%;
@@ -54,13 +49,61 @@
   border: 0;
   border-radius: 0 0.75rem 0.75rem 0;
   padding: 0%;
-  padding-left: .25rem;
-  background-color: #e4e4e4;
+  padding-left: 0.25rem;
+  background-color: #f1f1f1;
+}
+
+.header .label-sm {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.header .back-btn {
+  font-size: 1.1rem;
+  width: 12.5%;
+  height: 30%;
+  padding: 0.15rem 0;
+  left: 6.5%;
+  background-color: #db3838;
+  color: white;
+  border-radius: 0.5rem;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .update-btn {
+  font-size: 1.1rem;
+  width: 12.5%;
+  height: 30%;
+  padding: 0.15rem 0;
+  right: 6.5%;
+  background-color: #d4d004;
+  color: white;
+  border-radius: 0.5rem;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mobile-navbar {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   width: 100vw;
   height: 8.5vh;
   display: -webkit-box;
@@ -73,14 +116,20 @@
           align-items: center;
 }
 
-.mobile-navbar .icon {
+.mobile-navbar .nav-link {
+  color: black;
+}
+
+.mobile-navbar .nav-link .icon {
   width: 7.5vw;
   height: 7.5vw;
 }
 
+.mobile-navbar .selected {
+  color: rgba(0, 0, 0, 0.575);
+}
+
 .pill {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   padding: 0.35rem 0.5rem;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -99,7 +148,7 @@
   margin: 0.2rem;
 }
 
-.pill .label {
+.pill .pill-label {
   font-weight: bold;
 }
 
@@ -125,12 +174,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 3.75%;
 }
 
 .project-list-page .main-content .project-list-container {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 92.5%;
+  width: 100%;
   height: 100%;
   border-radius: 20px;
   background-color: #f1f1f1;
@@ -143,9 +191,7 @@
 }
 
 .project-list-page .main-content .project-list-container .project-list .list-controls {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0 1rem;
+  padding: 0 1.25rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -155,16 +201,22 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list-controls .ongoing {
-  width: 27.5%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-right: 1rem;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list-controls .completed {
-  width: 65%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-right: auto;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list-controls .active {
@@ -172,7 +224,7 @@
 }
 
 .project-list-page .main-content .project-list-container .project-list .list-controls .add-btn {
-  width: 7.5%;
+  width: 8.5%;
   height: 100%;
   text-align: end;
   display: -webkit-box;
@@ -184,13 +236,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.25rem 0;
-  border-radius: 0.35rem;
+  padding: .25rem .3rem;
+  border-radius: .35rem;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list {
   width: 100%;
-  height: 95%;
+  height: 92.5%;
   border-radius: 1rem;
   overflow-y: scroll;
 }
@@ -202,7 +254,7 @@
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item {
   margin-bottom: 1rem;
   width: 100%;
-  height: 20%;
+  height: 19%;
   background-color: white;
   border-radius: 1rem;
   display: -webkit-box;
@@ -211,13 +263,17 @@
   -webkit-box-shadow: 0.15rem 0.1rem #e2e2e2;
           box-shadow: 0.15rem 0.1rem #e2e2e2;
   position: relative;
+  cursor: pointer;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .delete-btn {
   position: absolute;
   top: 8%;
   right: 4%;
-  border: solid red;
+  padding: 0 .1rem;
+  background-color: #db3838;
+  color: white;
+  border-radius: .25rem;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .highlight {
@@ -228,11 +284,9 @@
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   width: 67.5%;
   height: 100%;
-  padding: 1rem 1.15rem;
+  padding: 1.25rem;
   padding-right: 0%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -252,18 +306,26 @@
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper {
   width: 100%;
   height: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper .project-type {
-  display: inline-block;
-  padding: 0.05rem 0.5rem;
-  font-size: 0.8rem;
+  padding: .5rem .4rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   height: 20%;
   background-color: #3278ff;
   color: white;
-  border-radius: 0.5rem;
+  border-radius: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper .project-title {
@@ -271,22 +333,25 @@
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper .project-description {
-  font-size: 1rem;
+  height: 1.2rem;
+  font-size: 1.2rem;
+  overflow-x: auto;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper .project-description::-webkit-scrollbar {
+  display: none;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .project-status {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   opacity: 0.8;
-  position: relative;
-  bottom: 0%;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-progress {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 28.5%;
+  width: 30%;
   height: 100%;
-  padding: 0.9rem;
+  padding-left: 0.5rem;
+  padding-right: 1.35rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -302,6 +367,10 @@
   stroke: #3278ff;
 }
 
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item:last-child {
+  margin-bottom: 0%;
+}
+
 .project-list-page .main-content .project-list-container .project-list .list::-webkit-scrollbar {
   display: none;
 }
@@ -313,8 +382,6 @@
 }
 
 .project-list-page .main-content .project-list-container .new-project-form .form-controls {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   padding: 0 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -332,14 +399,6 @@
 .project-list-page .main-content .project-list-container .new-project-form .form-controls .title {
   font-size: 1.25rem;
   font-weight: bold;
-}
-
-.project-list-page .main-content .project-list-container .new-project-form .form-controls .add-quest-title {
-  border: solid red;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 80%;
 }
 
 .project-list-page .main-content .project-list-container .new-project-form .form-controls .close-btn {
@@ -360,8 +419,6 @@
 }
 
 .project-list-page .main-content .project-list-container .new-project-form .form-container {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   width: 100%;
   height: 93%;
   background-color: white;
@@ -383,14 +440,13 @@
 .project-list-page .main-content .project-list-container .new-project-form .form-container .main-form {
   width: 97.5%;
   height: 100%;
+  font-size: 1.2rem;
 }
 
 .project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .overflow-container {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   width: 100%;
-  height: 87.5%;
-  padding: 1.5rem;
+  height: 90%;
+  padding: 2rem;
   overflow-y: auto;
 }
 
@@ -399,10 +455,10 @@
 }
 
 .project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .custom-form-row {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: 5%;
+  width: 92.5%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -425,7 +481,10 @@
 }
 
 .project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .custom-form-row .add-btn-container {
-  height: 100%;
+  height: 90%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -441,12 +500,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   text-align: center;
-  width: 70%;
+  width: 80%;
   height: 85%;
-  padding: 0 0.5rem;
+  padding: .1 1rem;
   border-radius: 0.35rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -457,9 +514,8 @@
 }
 
 .project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .quest-list:-moz-read-only {
-  box-sizing: border-box;
   border: solid #cfcfcf 1px;
-  width: 85%;
+  width: 92.5%;
   min-height: 20%;
   height: -moz-max-content;
   height: max-content;
@@ -470,10 +526,8 @@
 }
 
 .project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .quest-list:read-only {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border: solid #cfcfcf 1px;
-  width: 85%;
+  width: 92.5%;
   min-height: 20%;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -485,8 +539,6 @@
 }
 
 .project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .pill-area {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   width: 90%;
   height: 20%;
   border-radius: 0.25rem;
@@ -509,6 +561,292 @@
 
 .hide {
   display: none;
+}
+
+.project-details-page {
+  width: 100%;
+  height: 100%;
+}
+
+.project-details-page .main-content {
+  width: 100%;
+  height: calc(100% - 9vh);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 3.75%;
+  background-color: rgba(236, 236, 236, 0.5);
+}
+
+.project-details-page .main-content .project-details-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-details-page .main-content .project-details-main {
+  width: 95%;
+  height: 82.5%;
+  border-radius: 20px;
+  background-color: white;
+  -webkit-box-shadow: 0 0.3rem 0 0 #dbdbdb, 0.2rem 0 0 0 #e8e8e8;
+          box-shadow: 0 0.3rem 0 0 #dbdbdb, 0.2rem 0 0 0 #e8e8e8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: solid #f1f1f1 3px;
+}
+
+.project-details-page .main-content .project-details-main .highlight {
+  width: 2.5%;
+  height: 100%;
+  background-color: #3278ff;
+  border-radius: 20px 0 0 20px;
+  display: none;
+}
+
+.project-details-page .main-content .project-details-main .project-details {
+  width: 100%;
+  padding: 1.65rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.35rem;
+  overflow-y: auto;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-header .project-title {
+  font-size: 2.35rem;
+  font-weight: bold;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-header .project-icon {
+  background-color: #3278ff;
+  border-radius: 50%;
+  padding: 0.65rem;
+  color: white;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-header .project-icon .icon {
+  width: 25px;
+  height: 25px;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-date .label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  margin-right: 1rem;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-term {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-term .label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  margin-right: 1rem;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-description {
+  width: 97.5%;
+  height: 15%;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-description .label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-description .description {
+  max-height: 60%;
+  padding-top: 0.1rem;
+  padding-bottom: 0.2rem;
+  overflow-y: auto;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-description .description::-webkit-scrollbar {
+  display: none;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-quests {
+  height: 27.5%;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-quests .label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-quests .quests {
+  max-height: 75%;
+  padding-top: 0.1rem;
+  padding-bottom: 0.2rem;
+  padding-left: 1.5rem;
+  overflow-y: auto;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-quests .quests::-webkit-scrollbar {
+  display: none;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-skills {
+  width: 100%;
+  height: 20%;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-skills .label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-skills .skills {
+  width: 100%;
+  max-height: 70%;
+  padding-top: 0.1rem;
+  padding-bottom: 0.2rem;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-y: auto;
+  font-size: 1.25rem;
+}
+
+.project-details-page .main-content .project-details-main .project-details .project-skills .skills::-webkit-scrollbar {
+  display: none;
+}
+
+.project-details-page .main-content .project-progress-info {
+  width: 95%;
+  height: 12.5%;
+  border: solid rebeccapurple;
+  border-radius: 20px;
+  background-color: white;
+  -webkit-box-shadow: 0 0.3rem 0 0 #dbdbdb, 0.2rem 0 0 0 #e8e8e8;
+          box-shadow: 0 0.3rem 0 0 #dbdbdb, 0.2rem 0 0 0 #e8e8e8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: solid #f1f1f1 3px;
+  margin-bottom: 0.5rem;
+}
+
+.project-details-page .main-content .project-progress-info .highlight {
+  width: 2.5%;
+  height: 100%;
+  background-color: #3278ff;
+  border-radius: 20px 0 0 20px;
+  display: none;
+}
+
+.project-details-page .main-content .project-progress-info .progress-wrapper {
+  width: 100%;
+  padding: 0.75rem 1.65rem;
+  padding-top: 0.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 1.35rem;
+}
+
+.project-details-page .main-content .project-progress-info .progress-wrapper .progress-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.project-details-page .main-content .project-progress-info .progress-wrapper .progress-header .label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.project-details-page .main-content .project-progress-info .progress-wrapper .progress-header .logs-btn {
+  font-size: 1.1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 100%;
+  padding: .15rem .5rem;
+  background-color: #878e96;
+  color: white;
+  border-radius: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-details-page .main-content .project-progress-info .progress-wrapper .progress-bar-container {
+  height: 37.5%;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+.project-details-page .main-content .project-progress-info .progress-wrapper .progress-bar-container .progress-bar {
+  background-color: #3278ff;
 }
 
 .app {

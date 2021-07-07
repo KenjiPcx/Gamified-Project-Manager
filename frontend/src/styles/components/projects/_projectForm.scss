@@ -4,7 +4,6 @@
   font-size: 1.1rem;
 
   .form-controls {
-    box-sizing: border-box;
     padding: 0 1rem;
     display: flex;
     justify-content: space-between;
@@ -15,12 +14,6 @@
     .title {
       font-size: 1.25rem;
       font-weight: bold;
-    }
-
-    .add-quest-title {
-      border: solid red;
-      display: flex;
-      width: 80%;
     }
 
     .close-btn {
@@ -36,7 +29,6 @@
   }
 
   .form-container {
-    box-sizing: border-box;
     width: 100%;
     height: 93%;
     background-color: white;
@@ -55,13 +47,14 @@
     .main-form {
       width: 97.5%;
       height: 100%;
+      font-size: 1.2rem;
 
       .overflow-container {
-        box-sizing: border-box;
         width: 100%;
-        height: 87.5%;
-        padding: 1.5rem;
+        height: 90%;
+        padding: 2rem;
         overflow-y: auto;
+
       }
 
       .overflow-container::-webkit-scrollbar {
@@ -69,8 +62,8 @@
       }
 
       .custom-form-row {
-        width: max-content;
-        height: 5%;
+        width: 92.5%;
+        height: max-content;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -86,7 +79,8 @@
         }
 
         .add-btn-container {
-          height: 100%;
+          height: 90%;
+          width: max-content;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -94,11 +88,10 @@
 
         .add-btn {
           display: flex;
-          box-sizing: border-box;
           text-align: center;
-          width: 70%;
+          width: 80%;
           height: 85%;
-          padding: 0 0.5rem;
+          padding: .1 1rem;
           border-radius: 0.35rem;
           justify-content: center;
           align-items: center;
@@ -106,9 +99,8 @@
       }
 
       .quest-list:read-only {
-        box-sizing: border-box;
         border: solid rgb(207, 207, 207) 1px;
-        width: 85%;
+        width: 92.5%;
         min-height: 20%;
         height: max-content;
         overflow: auto;
@@ -118,7 +110,6 @@
       }
 
       .pill-area {
-        box-sizing: border-box;
         width: 90%;
         height: 20%;
         border-radius: 0.25rem;

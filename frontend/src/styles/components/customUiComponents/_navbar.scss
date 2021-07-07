@@ -1,0 +1,20 @@
+.mobile-navbar {
+  width: 100vw;
+  height: 8.5vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .nav-link {
+    color: rgb(0, 0, 0);
+
+    .icon {
+      width: 7.5vw;
+      height: 7.5vw;
+    }
+  }
+
+  .selected {
+    color: rgba(0, 0, 0, 0.575);
+  }
+}

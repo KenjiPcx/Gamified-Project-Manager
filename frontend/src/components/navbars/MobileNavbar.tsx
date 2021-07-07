@@ -1,17 +1,34 @@
-import React from 'react'
-import { faClipboardList, faGift, faHome, faQuestionCircle, faUserCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  faClipboardList,
+  faGift,
+  faHome,
+  faQuestionCircle,
+  faUserCircle,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import NavbarData from "./NavbarData";
 
 function MobileNavbar() {
-    return (
-      <div className="mobile-navbar">
-        <FontAwesomeIcon icon={faHome} className="icon" />
-        <FontAwesomeIcon icon={faQuestionCircle} className="icon" />
-        <FontAwesomeIcon icon={faClipboardList} className="icon" />
-        <FontAwesomeIcon icon={faGift} className="icon" />
-        <FontAwesomeIcon icon={faUserCircle} className="icon" />
-      </div>
-    );
+  const [selected, setSelected] = useState(0);
+
+  return (
+    <div className="mobile-navbar">
+      {NavbarData.map((navbarItem, key) => {
+        return (
+          <Link
+            to={navbarItem.link}
+            key={key}
+            className={`nav-link ${selected === key ? "selected" : ""}`}
+            onClick={() => setSelected(key)}
+          >
+            {navbarItem.icon}
+          </Link>
+        );
+      })}
+    </div>
+  );
 }
 
-export default MobileNavbar
+export default MobileNavbar;

@@ -14,7 +14,7 @@ function Pill({ id, label, removable, removeHandler }: PillProps) {
 
   return (
     <div className="pill" style={{backgroundColor: colors[id % colors.length]}}>
-      <div className="label">{label}</div>
+      <div className="pill-label">{label}</div>
       {removeHandler ? (
         <div className="close" onClick={() => removeHandler(label)}>
           <FontAwesomeIcon icon={faTimes} />

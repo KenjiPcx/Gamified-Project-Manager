@@ -1,14 +1,23 @@
+// Constants 
+$primary-color: #3278ff;
+$secondary-color: #878e96;
+$success-color: #43db7d;
+$danger-color: #db3838;
+$warning-color: #d4d004;
+$secondary-bg-color: #f1f1f1;
+
 // Headers
-@import './components/headers';
+@import './components/customUiComponents/headers';
 
 // Navbars
-@import './components/navbar';
+@import './components/customUiComponents/navbar';
 
 // Custom Ui Components
 @import './components/customUiComponents/pill';
 
 // Pages
 @import './pages/projectsList';
+@import './pages/projectDetail';
 
 .app {
     width: 100%;

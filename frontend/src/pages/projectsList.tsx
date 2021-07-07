@@ -21,6 +21,7 @@ function ProjectsList() {
 
   useEffect(() => {
     setFilteredProjects(searchFilter(termFilter(typeFilter(projects))));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search, type, term, projects]);
 
   const resetType = (state: string) => {
@@ -57,8 +58,15 @@ function ProjectsList() {
   };
 
   const removeProject = (label: string) => {
-    setProjects(prevProjects => projects.filter(project => project.title !== label))
-  }
+    setProjects((prevProjects) =>
+      projects.filter((project) => project.title !== label)
+    );
+  };
+
+  const getShortDesc = (desc: string) => {
+    const index = desc.indexOf(".");
+    return desc.substr(0, index);
+  };
 
   return (
     <div className="project-list-page">
@@ -98,7 +106,7 @@ function ProjectsList() {
                   <ProjectsListItem
                     type={project.type}
                     title={project.title}
-                    description={project.description}
+                    description={getShortDesc(project.description)}
                     status={project.status}
                     progress={project.progress}
                     key={key}

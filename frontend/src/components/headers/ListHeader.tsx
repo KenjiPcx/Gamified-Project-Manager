@@ -10,7 +10,7 @@ interface ListHeaderProps {
 function ListHeader({ pageTitle, types, setSearch, setType }: ListHeaderProps) {
 
   return (
-    <div className="list-header">
+    <div className="header">
       <div className="label">{pageTitle}</div>
       <form className="searchbar">
           <input
