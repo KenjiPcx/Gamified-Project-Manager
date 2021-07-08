@@ -57,19 +57,43 @@
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  font-size: 1.7rem;
+  font-size: 2rem;
   text-align: center;
 }
 
 .header .back-btn {
-  font-size: 1.1rem;
-  width: 12.5%;
-  height: 30%;
-  padding: 0.15rem 0;
-  left: 6.5%;
-  background-color: #db3838;
+  font-size: 1.5rem;
+  width: 10.5%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 0.5rem;
+  left: 3.5%;
+  background-color: #878e96;
   color: white;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .btn {
+  font-size: 1.5rem;
+  width: 10.5%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 0.5rem;
+  right: 3.5%;
+  color: white;
+  border-radius: 0.75rem;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -83,24 +107,11 @@
 }
 
 .header .update-btn {
-  font-size: 1.1rem;
-  width: 12.5%;
-  height: 30%;
-  padding: 0.15rem 0;
-  right: 6.5%;
-  background-color: #d4d004;
-  color: white;
-  border-radius: 0.5rem;
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  background-color: #878e96;
+}
+
+.header .check-btn {
+  background-color: #43db7d;
 }
 
 .mobile-navbar {
@@ -438,23 +449,42 @@
 }
 
 .project-list-page .main-content .project-list-container .new-project-form .form-container .main-form {
-  width: 97.5%;
+  width: 100%;
   height: 100%;
   font-size: 1.2rem;
 }
 
-.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .overflow-container {
+.project-list-page .main-content .project-list-container .new-project-form .form-container .overflow-container {
   width: 100%;
-  height: 90%;
+  height: 87.5%;
   padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow-y: auto;
 }
 
-.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .overflow-container::-webkit-scrollbar {
-  display: none;
+.project-list-page .main-content .project-list-container .new-project-form .form-container .overflow-container .quest-name {
+  margin-bottom: 11%;
 }
 
-.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .custom-form-row {
+.project-list-page .main-content .project-list-container .new-project-form .form-container .overflow-container .quest-type-term {
+  margin-bottom: 11%;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .overflow-container .quest-description {
+  margin-bottom: 11%;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .overflow-container .quest-task {
+  margin-bottom: 11%;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .overflow-container .custom-form-row {
   width: 92.5%;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -470,40 +500,22 @@
           align-items: center;
 }
 
-.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .custom-form-row .label .form-label {
+.project-list-page .main-content .project-list-container .new-project-form .form-container .overflow-container .custom-form-row .label .form-label {
   margin: 0%;
   margin-right: 1rem;
 }
 
-.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .custom-form-row .skill-input {
-  width: 70%;
-  height: 75%;
-}
-
-.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .custom-form-row .add-btn-container {
-  height: 90%;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .custom-form-row .add-btn {
+.project-list-page .main-content .project-list-container .new-project-form .form-container .overflow-container .custom-form-row .add-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: center;
-  width: 80%;
-  height: 85%;
-  padding: .1 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   border-radius: 0.35rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -511,9 +523,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #878e96;
+  color: white;
+  padding: 0.35rem;
 }
 
-.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .quest-list:-moz-read-only {
+.project-list-page .main-content .project-list-container .new-project-form .form-container .overflow-container .custom-form-row .quest-list:-moz-read-only {
   border: solid #cfcfcf 1px;
   width: 92.5%;
   min-height: 20%;
@@ -525,7 +540,7 @@
   margin-top: 0.5rem;
 }
 
-.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .quest-list:read-only {
+.project-list-page .main-content .project-list-container .new-project-form .form-container .overflow-container .custom-form-row .quest-list:read-only {
   border: solid #cfcfcf 1px;
   width: 92.5%;
   min-height: 20%;
@@ -538,7 +553,11 @@
   margin-top: 0.5rem;
 }
 
-.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .pill-area {
+.project-list-page .main-content .project-list-container .new-project-form .form-container .overflow-container .overflow-container::-webkit-scrollbar {
+  display: none;
+}
+
+.project-list-page .main-content .project-list-container .new-project-form .form-container .overflow-container .pill-area {
   width: 90%;
   height: 20%;
   border-radius: 0.25rem;
@@ -550,7 +569,7 @@
       flex-wrap: wrap;
 }
 
-.project-list-page .main-content .project-list-container .new-project-form .form-container .main-form .submit-btn {
+.project-list-page .main-content .project-list-container .new-project-form .form-container .submit-btn {
   display: block;
   position: absolute;
   bottom: 4%;
@@ -580,14 +599,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 3.75%;
-  background-color: rgba(236, 236, 236, 0.5);
+  padding: 0 2.5%;
+  background-color: #f1f1f1;
+  border-radius: 20px;
 }
 
 .project-details-page .main-content .project-details-container {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -612,7 +632,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border: solid #f1f1f1 3px;
+  margin-top: 0.25rem;
 }
 
 .project-details-page .main-content .project-details-container .project-details-main .highlight {
@@ -625,6 +650,7 @@
 
 .project-details-page .main-content .project-details-container .project-details-main .project-details {
   width: 100%;
+  height: 100%;
   padding: 1.65rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -658,16 +684,35 @@
   font-weight: bold;
 }
 
+.project-details-page .main-content .project-details-container .project-details-main .project-details .project-header .form-control {
+  width: 80%;
+}
+
 .project-details-page .main-content .project-details-container .project-details-main .project-details .project-header .project-icon {
   background-color: #3278ff;
   border-radius: 50%;
   padding: 0.65rem;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .project-details-page .main-content .project-details-container .project-details-main .project-details .project-header .project-icon .icon {
   width: 25px;
   height: 25px;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .project-details .project-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .project-details .project-type .label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  margin-right: 1rem;
 }
 
 .project-details-page .main-content .project-details-container .project-details-main .project-details .project-date {
@@ -711,6 +756,11 @@
   overflow-y: auto;
 }
 
+.project-details-page .main-content .project-details-container .project-details-main .project-details .project-description .form-control {
+  max-height: 62.5%;
+  padding: 0.1rem 0.25rem;
+}
+
 .project-details-page .main-content .project-details-container .project-details-main .project-details .project-description .description::-webkit-scrollbar {
   display: none;
 }
@@ -734,6 +784,45 @@
 
 .project-details-page .main-content .project-details-container .project-details-main .project-details .project-quests .quests::-webkit-scrollbar {
   display: none;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .project-details .project-quests .quest-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .project-details .project-quests .quest-header .label {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .project-details .project-quests .quest-header .add-btn {
+  font-size: 1rem;
+  margin-left: 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 0.2rem 0.3rem;
+  background-color: #878e96;
+  color: white;
+  border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .project-details-page .main-content .project-details-container .project-details-main .project-details .project-skills {
@@ -763,6 +852,146 @@
 
 .project-details-page .main-content .project-details-container .project-details-main .project-details .project-skills .skills::-webkit-scrollbar {
   display: none;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .header {
+  width: 100%;
+  height: 10%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form {
+  width: 100%;
+  height: 90%;
+  font-size: 1.35rem;
+  position: relative;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .overflow-container {
+  width: 100%;
+  height: 87%;
+  padding: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: auto;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .overflow-container .quest-name {
+  margin-bottom: 10%;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .overflow-container .quest-type-term {
+  margin-bottom: 10%;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .overflow-container .quest-description {
+  margin-bottom: 10%;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .overflow-container .quest-task {
+  margin-bottom: 10%;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .overflow-container .custom-form-row {
+  width: 92.5%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .overflow-container .custom-form-row .label .form-label {
+  margin: 0%;
+  margin-right: 1rem;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .overflow-container .custom-form-row .add-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 0.35rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #878e96;
+  color: white;
+  padding: 0.35rem;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .overflow-container .custom-form-row .quest-list:-moz-read-only {
+  border: solid #cfcfcf 1px;
+  width: 92.5%;
+  min-height: 20%;
+  height: -moz-max-content;
+  height: max-content;
+  overflow: auto;
+  padding: 0.5rem 2rem;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .overflow-container .custom-form-row .quest-list:read-only {
+  border: solid #cfcfcf 1px;
+  width: 92.5%;
+  min-height: 20%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  overflow: auto;
+  padding: 0.5rem 2rem;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .overflow-container .pill-area {
+  width: 90%;
+  height: 20%;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .overflow-container::-webkit-scrollbar {
+  display: none;
+}
+
+.project-details-page .main-content .project-details-container .project-details-main .main-form .submit-btn {
+  display: block;
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .project-details-page .main-content .project-details-container .project-progress-info {
@@ -826,7 +1055,7 @@
   width: max-content;
   height: 100%;
   padding: 0.15rem 0.5rem;
-  background-color: #878e96;
+  background-color: #d4d004;
   color: white;
   border-radius: 0.5rem;
   display: -webkit-box;
@@ -872,6 +1101,11 @@
   font-size: 2.25rem;
   font-weight: bold;
   color: #ececec;
+  cursor: pointer;
+}
+
+.project-details-page .main-content .project-details-container .project-progress-info::-webkit-scrollbar {
+  display: none;
 }
 
 .app {

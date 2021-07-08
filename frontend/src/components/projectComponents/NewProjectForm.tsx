@@ -39,7 +39,7 @@ function NewProjectForm({
     setProjectType("Choose Type");
     setProjectTerm("Choose Term");
     setQuests([]);
-  }
+  };
 
   const exitForm = () => {
     if (showQuestForm) {
@@ -52,10 +52,10 @@ function NewProjectForm({
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    let skills: string[] = []
+    let skills: string[] = [];
     quests.forEach((quest) => {
-      skills = [...skills, ...quest.skills]
-    })
+      skills = [...skills, ...quest.skills];
+    });
 
     const project: ProjectObj = {
       title: projectName,
@@ -66,17 +66,23 @@ function NewProjectForm({
       progress: 0,
       status: "Initialized Project",
       startDate: Date.now(),
-      skillsInvolved: skills
+      skillsInvolved: skills,
     };
     updateProjects((prevProjects) => [...prevProjects, project]);
     toggleShow();
   };
 
+  const disabled =
+    projectName === "" &&
+    (projectType === "Choose Type" || projectType === "") &&
+    (projectTerm === "Choose Term" || projectType === "") &&
+    projectDescription === "" 
+
   useEffect(() => {
     if (!show) {
       resetForm();
     }
-  }, [show])
+  }, [show]);
 
   return (
     <div className={`${show ? "new-project-form" : "hide"}`}>
@@ -212,6 +218,7 @@ function NewProjectForm({
           <Button
             variant="primary"
             type="submit"
+            disabled={disabled}
             className="submit-btn"
             onClick={(e) => handleSubmit(e)}
           >

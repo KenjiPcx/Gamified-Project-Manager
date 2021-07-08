@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from "react";
 import BackHeaderWithEdit from "../components/headers/BackHeaderWithEdit";
 import ProjectsData from "../components/projectComponents/ProjectsListData";
-import Pill from "../components/customUIComponents/Pill";
 import ProjectDetails from "../components/projectComponents/ProjectDetails";
 import UpdateProjectForm from "../components/projectComponents/UpdateProjectForm";
 import { ProgressBar } from "react-bootstrap";
-import { type } from "os";
 
 function Project() {
-  const [showEdit, setShowEdit] = useState(false);
-
-  const toggleShowEdit = () => {
-    setShowEdit(!showEdit);
-  };
-
   const {
     title,
     term,
@@ -25,6 +17,18 @@ function Project() {
     skillsInvolved,
     progress,
   } = ProjectsData[0];
+
+  const [showEdit, setShowEdit] = useState(false);
+  const [projectName, setProjectName] = useState(title);
+  const [projectDescription, setProjectDescription] = useState(description);
+  const [projectType, setProjectType] = useState(type);
+  const [projectTerm, setProjectTerm] = useState(term);
+  const [projectQuests, setProjectQuests] = useState<string[]>(dependencies);
+  const [projectSkills, setProjectSkills] = useState<string[]>(skillsInvolved);
+
+  const toggleShowEdit = () => {
+    setShowEdit(!showEdit);
+  };
 
   const getDate = () => {
     let date = new Date(startDate);
@@ -43,29 +47,36 @@ function Project() {
       <BackHeaderWithEdit
         pageTitle="Projects Details"
         prevPageLink="/projectlist"
+        showEdit={showEdit}
         edit={toggleShowEdit}
       />
       <div className="main-content">
         <div className="project-details-container">
           {showEdit ? (
             <UpdateProjectForm
-              title={title}
-              type={type}
-              term={term}
+              name={projectName}
+              type={projectType}
+              term={projectTerm}
               icon={icon}
-              description={description}
-              quests={dependencies}
-              skillsInvolved={skillsInvolved}
+              description={projectDescription}
+              quests={projectQuests}
+              skillsInvolved={projectSkills}
               date={getDate()}
+              setProjectName={setProjectName}
+              setProjectType={setProjectType}
+              setProjectTerm={setProjectTerm}
+              setProjectDescription={setProjectDescription}
+              setProjectQuests={setProjectQuests}
+              setProjectSkills={setProjectSkills}
             />
           ) : (
             <ProjectDetails
-              title={title}
-              term={term}
+              title={projectName}
+              term={projectTerm}
               icon={icon}
-              description={description}
-              dependencies={dependencies}
-              skills={skillsInvolved}
+              description={projectDescription}
+              dependencies={projectQuests}
+              skills={projectSkills}
               date={getDate()}
             />
           )}

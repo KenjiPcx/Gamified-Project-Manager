@@ -38,7 +38,7 @@
         width: max-content;
         height: 100%;
         padding: 0.15rem 0.5rem;
-        background-color: $secondary-color;
+        background-color: $warning-color;
         color: white;
         border-radius: 0.5rem;
         display: flex;
@@ -72,5 +72,10 @@
     font-size: 2.25rem;
     font-weight: bold;
     color: rgb(236, 236, 236);
+    cursor: pointer;
   }
+}
+
+.project-progress-info::-webkit-scrollbar {
+  display: none;
 }

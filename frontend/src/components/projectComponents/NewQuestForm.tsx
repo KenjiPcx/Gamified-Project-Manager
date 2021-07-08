@@ -56,142 +56,150 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
     toggleShow(false);
   };
 
+  const disabled =
+    questName === "" &&
+    (questType === "Choose Type" || questType === "") &&
+    (questDiff === "Choose Diff" || questDiff === "") &&
+    questDesc === "" &&
+    questTask === "" 
+  
   useEffect(() => {
     if (!show) {
       resetForm();
     }
-  }, [show])
+  }, [show]);
 
   return (
-    <Form
-      className={`${show ? "main-form" : "hide"}`}
-      onSubmit={(e) => {
-        handleSubmit(e);
-      }}
-    >
-      <div className="overflow-container">
-        <Form.Row>
-          <Col xs={9}>
-            <Form.Label>Quest Name</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter Quest Name"
-              className="form-input"
-              value={questName}
-              onChange={(e) => setQuestName(e.target.value)}
-            />
-          </Col>
-        </Form.Row>
-        <br />
-        <br />
-        <Form.Row>
-          <Col xs={5}>
-            <Form.Label>Quest Type</Form.Label>
-            <Form.Control
-              as="select"
-              value={questType}
-              onChange={(e) => setQuestType(e.target.value)}
-            >
-              <option>Choose Type</option>
-              <option>Projects</option>
-              <option>Coding</option>
-              <option>Fitness</option>
-              <option>Academic</option>
-            </Form.Control>
-          </Col>
-          <Col xs={1}></Col>
-          <Col xs={5}>
-            <Form.Label>Quest Diff</Form.Label>
-            <Form.Control
-              as="select"
-              value={questDiff}
-              onChange={(e) => setQuestDiff(e.target.value)}
-            >
-              <option>Choose Diff</option>
-              <option>S</option>
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
-              <option>D</option>
-              <option>E</option>
-              <option>F</option>
-            </Form.Control>
-          </Col>
-        </Form.Row>
-        <br />
-        <br />
-        <Form.Row>
-          <Col xs={11}>
-            <Form.Label>Quest Description</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={3}
-              placeholder="Enter Description"
-              value={questDesc}
-              onChange={(e) => setQuestDesc(e.target.value)}
-            />
-          </Col>
-        </Form.Row>
-        <br />
-        <br />
-        <Form.Row>
-          <Col xs={11}>
-            <Form.Label>Quest Task</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={1}
-              placeholder="Enter Task"
-              value={questTask}
-              onChange={(e) => setQuestTask(e.target.value)}
-            />
-          </Col>
-        </Form.Row>
-        <br />
-        <br />
-        <Form.Label>Skills Involved:</Form.Label>
+    <>
+      {show ? (
+        <Form
+          className="main-form"
+          onSubmit={(e) => {
+            handleSubmit(e);
+          }}
+        >
+          <div className="overflow-container">
+            <Form.Row className="quest-name">
+              <Col xs={11}>
+                <Form.Label>Quest Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter Quest Name"
+                  className="form-input"
+                  value={questName}
+                  onChange={(e) => setQuestName(e.target.value)}
+                />
+              </Col>
+            </Form.Row>
 
-        <div className="custom-form-row">
-          <Form.Control
-            type="text"
-            placeholder="Enter Skill Name"
-            className="form-input skill-input"
-            value={questSkill}
-            onChange={(e) => setQuestSkill(e.target.value)}
-          />
-          <div className="add-btn-container">
-            <Button
-              variant="secondary"
-              className="add-btn"
-              onClick={addToSkills}
-            >
-              <FontAwesomeIcon icon={faPlus} />
-            </Button>
+            <Form.Row className="quest-type-term">
+              <Col xs={5}>
+                <Form.Label>Quest Type</Form.Label>
+                <Form.Control
+                  as="select"
+                  value={questType}
+                  onChange={(e) => setQuestType(e.target.value)}
+                >
+                  <option>Choose Type</option>
+                  <option>Projects</option>
+                  <option>Coding</option>
+                  <option>Fitness</option>
+                  <option>Academic</option>
+                </Form.Control>
+              </Col>
+              <Col xs={1}></Col>
+              <Col xs={5}>
+                <Form.Label>Quest Diff</Form.Label>
+                <Form.Control
+                  as="select"
+                  value={questDiff}
+                  onChange={(e) => setQuestDiff(e.target.value)}
+                >
+                  <option>Choose Diff</option>
+                  <option>S</option>
+                  <option>A</option>
+                  <option>B</option>
+                  <option>C</option>
+                  <option>D</option>
+                  <option>E</option>
+                  <option>F</option>
+                </Form.Control>
+              </Col>
+            </Form.Row>
+
+            <Form.Row className="quest-description">
+              <Col xs={11}>
+                <Form.Label>Quest Description</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  placeholder="Enter Description"
+                  value={questDesc}
+                  onChange={(e) => setQuestDesc(e.target.value)}
+                />
+              </Col>
+            </Form.Row>
+
+            <Form.Row className="quest-task">
+              <Col xs={11}>
+                <Form.Label>Quest Task</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={1}
+                  placeholder="Enter Task"
+                  value={questTask}
+                  onChange={(e) => setQuestTask(e.target.value)}
+                />
+              </Col>
+            </Form.Row>
+
+            <Form.Label>Skills Involved:</Form.Label>
+            <div className="custom-form-row">
+              <Form.Row className="quest-skills">
+                <Col xs={9}>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter Skill Name"
+                    className="form-input skill-input"
+                    value={questSkill}
+                    onChange={(e) => setQuestSkill(e.target.value)}
+                  />
+                </Col>
+              </Form.Row>
+              <div className="add-btn" onClick={addToSkills}>
+                <FontAwesomeIcon icon={faPlus} />
+              </div>
+            </div>
+
+            <div className="pill-area">
+              {questSkills.map((skill, key) => {
+                return (
+                  <Pill
+                    id={key}
+                    label={skill}
+                    removable={true}
+                    removeHandler={removeFromSkills}
+                    key={key}
+                  />
+                );
+              })}
+            </div>
           </div>
-        </div>
-        <div className="pill-area">
-          {questSkills.map((skill, key) => {
-            return (
-              <Pill
-                id={key}
-                label={skill}
-                removable={true}
-                removeHandler={removeFromSkills}
-                key={key}
-              />
-            );
-          })}
-        </div>
-      </div>
 
-      <Button
-        variant="primary"
-        type="submit"
-        className="submit-btn"
-        onClick={(e) => handleSubmit(e)}
-      >
-        Add Quest
-      </Button>
-    </Form>
+          <Button
+            variant="primary"
+            type="submit"
+            disabled={disabled}
+            className={`submit-btn`}
+            onClick={(e) => handleSubmit(e)}
+          >
+            Add Quest
+          </Button>
+        </Form>
+      ) : (
+        ""
+      )}
+    </>
   );
 }
 
