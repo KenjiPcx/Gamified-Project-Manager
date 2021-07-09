@@ -1,0 +1,148 @@
+.quest-list-page {
+  width: 100%;
+  height: 100%;
+
+  .main-content {
+    width: 100%;
+    height: calc(100% - 9vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3.75%;
+
+    .quest-list-container {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background-color: $secondary-bg-color;
+      padding: 3.5% 3%;
+
+      .quest-list {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .list-controls {
+          width: 100%;
+          height: auto;
+          padding: 0.1rem 1.25rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 1.4rem;
+          margin-bottom: 1rem;
+
+          .daily {
+            width: max-content;
+          }
+
+          .weekly {
+            width: max-content;
+          }
+
+          .main {
+            width: max-content;
+          }
+
+          .active {
+            font-weight: bold;
+          }
+        }
+
+        .list {
+          width: 97.5%;
+          height: 92.5%;
+          border-radius: 1rem;
+          overflow-y: scroll;
+
+          .quests-list-item {
+            margin-bottom: 1rem;
+            width: 100%;
+            height: 18%;
+            background-color: white;
+            border-radius: 1.5rem;
+            display: flex;
+            box-shadow: 0.15rem 0.1rem rgb(226, 226, 226);
+            position: relative;
+            cursor: pointer;
+
+            .highlight {
+              width: 2.5%;
+              height: 100%;
+              background-color: $quest-color;
+              border-radius: 1rem 0 0 1rem;
+            }
+
+            .quest-info {
+              width: 67.5%;
+              height: 100%;
+              padding: 0.9rem;
+              padding-left: 1.25rem;
+              padding-right: 0%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: flex-start;
+
+              .wrapper {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+
+                .quest-series {
+                  font-size: 1.5rem;
+                  padding: 0.75rem 0.5rem;
+                  width: max-content;
+                  height: 20%;
+                  background-color: $quest-color;
+                  color: white;
+                  border-radius: 0.5rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+              }
+
+              .quest-name {
+                font-size: 2rem;
+                margin-top: 0.5rem;
+              }
+            }
+
+            .icon-container {
+              width: 30%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              .icon {
+                font-size: 2rem;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $quest-color;
+                color: white;
+                border-radius: 50%;
+              }
+            }
+          }
+
+          .quests-list-item:last-child {
+            margin-bottom: 0%;
+          }
+        }
+      }
+      .list::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

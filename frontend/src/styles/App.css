@@ -199,10 +199,22 @@
 .project-list-page .main-content .project-list-container .project-list {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list-controls {
-  padding: 0 1.25rem;
+  width: 100%;
+  height: auto;
+  padding: 0.1rem 1.25rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -212,7 +224,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
@@ -220,7 +232,7 @@
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list-controls .completed {
@@ -247,27 +259,23 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: .25rem .3rem;
-  border-radius: .35rem;
+  padding: 0.25rem 0.3rem;
+  border-radius: 0.35rem;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list {
-  width: 100%;
+  width: 97.5%;
   height: 92.5%;
   border-radius: 1rem;
   overflow-y: scroll;
 }
 
-.project-list-page .main-content .project-list-container .project-list .list .hide {
-  display: none;
-}
-
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item {
   margin-bottom: 1rem;
   width: 100%;
-  height: 19%;
+  height: 18%;
   background-color: white;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -281,10 +289,10 @@
   position: absolute;
   top: 8%;
   right: 4%;
-  padding: 0 .1rem;
+  padding: 0 0.1rem;
   background-color: #db3838;
   color: white;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .highlight {
@@ -297,7 +305,8 @@
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info {
   width: 67.5%;
   height: 100%;
-  padding: 1.25rem;
+  padding: 0.9rem;
+  padding-left: 1.25rem;
   padding-right: 0%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -316,18 +325,32 @@
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper {
   width: 100%;
-  height: 100%;
+  height: 82.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper .project-type {
-  padding: .5rem .4rem;
+  font-size: 1.5rem;
+  padding: 0.75rem 0.5rem;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   height: 20%;
   background-color: #3278ff;
   color: white;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -340,7 +363,14 @@
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper .project-title {
-  font-size: 1.55rem;
+  width: 100%;
+  height: 50%;
+  font-size: 2rem;
+  overflow-x: auto;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper .project-title::-webkit-scrollbar {
+  display: none;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .wrapper .project-description {
@@ -354,12 +384,13 @@
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-info .project-status {
+  height: 17.5%;
   font-size: 0.85rem;
   opacity: 0.8;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-progress {
-  width: 30%;
+  width: 29.5%;
   height: 100%;
   padding-left: 0.5rem;
   padding-right: 1.35rem;
@@ -576,10 +607,6 @@
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-}
-
-.hide {
-  display: none;
 }
 
 .project-details-page {
@@ -1050,13 +1077,14 @@
 
 .project-details-page .main-content .project-details-container .project-progress-info .progress-wrapper .progress-header .logs-btn {
   font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   height: 100%;
   padding: 0.15rem 0.5rem;
   background-color: #d4d004;
-  color: white;
   border-radius: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1067,6 +1095,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.project-details-page .main-content .project-details-container .project-progress-info .progress-wrapper .progress-header .logs-btn a {
+  color: white;
 }
 
 .project-details-page .main-content .project-details-container .project-progress-info .progress-wrapper .progress-bar-container {
@@ -1108,8 +1140,228 @@
   display: none;
 }
 
+.quest-list-page {
+  width: 100%;
+  height: 100%;
+}
+
+.quest-list-page .main-content {
+  width: 100%;
+  height: calc(100% - 9vh);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 3.75%;
+}
+
+.quest-list-page .main-content .quest-list-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  padding: 3.5% 3%;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list-controls {
+  width: 100%;
+  height: auto;
+  padding: 0.1rem 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list-controls .daily {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list-controls .weekly {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list-controls .main {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list-controls .active {
+  font-weight: bold;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list {
+  width: 97.5%;
+  height: 92.5%;
+  border-radius: 1rem;
+  overflow-y: scroll;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list .quests-list-item {
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 18%;
+  background-color: white;
+  border-radius: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0.15rem 0.1rem #e2e2e2;
+          box-shadow: 0.15rem 0.1rem #e2e2e2;
+  position: relative;
+  cursor: pointer;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list .quests-list-item .highlight {
+  width: 2.5%;
+  height: 100%;
+  background-color: #4dbb77;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list .quests-list-item .quest-info {
+  width: 67.5%;
+  height: 100%;
+  padding: 0.9rem;
+  padding-left: 1.25rem;
+  padding-right: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list .quests-list-item .quest-info .wrapper {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list .quests-list-item .quest-info .wrapper .quest-series {
+  font-size: 1.5rem;
+  padding: 0.75rem 0.5rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 20%;
+  background-color: #4dbb77;
+  color: white;
+  border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list .quests-list-item .quest-info .quest-name {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list .quests-list-item .icon-container {
+  width: 30%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list .quests-list-item .icon-container .icon {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #4dbb77;
+  color: white;
+  border-radius: 50%;
+}
+
+.quest-list-page .main-content .quest-list-container .quest-list .list .quests-list-item:last-child {
+  margin-bottom: 0%;
+}
+
+.quest-list-page .main-content .quest-list-container .list::-webkit-scrollbar {
+  display: none;
+}
+
 .app {
   width: 100%;
   height: 91.5vh;
+}
+
+.hide {
+  display: none;
 }
 /*# sourceMappingURL=App.css.map */

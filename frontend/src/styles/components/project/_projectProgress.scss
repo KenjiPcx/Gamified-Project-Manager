@@ -35,15 +35,20 @@
 
       .logs-btn {
         font-size: 1.1rem;
+        font-weight: bold;
+        text-decoration: none;
         width: max-content;
         height: 100%;
         padding: 0.15rem 0.5rem;
         background-color: $warning-color;
-        color: white;
         border-radius: 0.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
+         
+        a {
+          color: white;
+        }
       }
     }
 

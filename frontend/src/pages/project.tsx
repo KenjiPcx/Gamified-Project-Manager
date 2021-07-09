@@ -4,6 +4,7 @@ import ProjectsData from "../components/projectComponents/ProjectsListData";
 import ProjectDetails from "../components/projectComponents/ProjectDetails";
 import UpdateProjectForm from "../components/projectComponents/UpdateProjectForm";
 import { ProgressBar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Project() {
   const {
@@ -85,7 +86,7 @@ function Project() {
             <div className="progress-wrapper">
               <div className="progress-header">
                 <div className="label">Progress: </div>
-                <div className="logs-btn">Logs</div>
+                <div className="logs-btn"><Link to="/logs">Logs</Link></div>
               </div>
               <ProgressBar
                 now={progress}

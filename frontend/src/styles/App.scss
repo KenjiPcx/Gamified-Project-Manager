@@ -5,6 +5,7 @@ $success-color: #43db7d;
 $danger-color: #db3838;
 $warning-color: #d4d004;
 $secondary-bg-color: #f1f1f1;
+$quest-color: #4dbb77;
 
 // Headers
 @import './components/customUiComponents/headers';
@@ -18,8 +19,13 @@ $secondary-bg-color: #f1f1f1;
 // Pages
 @import './pages/projectsList';
 @import './pages/projectDetail';
+@import './pages/questsList';
 
 .app {
     width: 100%;
     height: 91.5vh;
+}
+
+.hide {
+  display: none;
 }

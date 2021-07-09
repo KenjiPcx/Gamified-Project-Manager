@@ -67,7 +67,6 @@ function ProjectsListItem({
         <div className="wrapper">
           <div className="project-type">{type}</div>
           <div className="project-title">{title}</div>
-          <div className="project-description">{description}</div>
         </div>
         <div className="project-status">Status: {status}</div>
       </div>

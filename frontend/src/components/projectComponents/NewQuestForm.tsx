@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Pill from "../customUIComponents/Pill";
 import { QuestObj } from "../questComponents/QuestListData";
+import { generateRewards } from "../gameSystem/GameFunctions";
 
 interface NewQuestFormProps {
   show: boolean;
@@ -49,8 +50,9 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
       type: questType,
       diff: questDiff,
       description: questDesc,
-      task: questTask,
+      task: [questTask],
       skills: questSkills,
+      rewards: generateRewards(questDiff)
     };
     updateQuests((prevQuests) => [...prevQuests, quest]);
     toggleShow(false);

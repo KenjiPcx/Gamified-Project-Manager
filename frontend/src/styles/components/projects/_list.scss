@@ -1,18 +1,23 @@
 .project-list {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .list-controls {
-    padding: 0 1.25rem;
+    width: 100%;
+    height: auto;
+    padding: 0.1rem 1.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
 
     .ongoing {
       width: max-content;
-      margin-right: 1rem;
+      margin-right: 1.5rem;
     }
 
     .completed {
@@ -31,27 +36,23 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: .25rem .3rem;
-      border-radius: .35rem;
+      padding: 0.25rem 0.3rem;
+      border-radius: 0.35rem;
     }
   }
 
   .list {
-    width: 100%;
+    width: 97.5%;
     height: 92.5%;
     border-radius: 1rem;
     overflow-y: scroll;
 
-    .hide {
-      display: none;
-    }
-
     .projects-list-item {
       margin-bottom: 1rem;
       width: 100%;
-      height: 19%;
+      height: 18%;
       background-color: white;
-      border-radius: 1rem;
+      border-radius: 1.5rem;
       display: flex;
       box-shadow: 0.15rem 0.1rem rgb(226, 226, 226);
       position: relative;
@@ -61,10 +62,10 @@
         position: absolute;
         top: 8%;
         right: 4%;
-        padding: 0 .1rem;
+        padding: 0 0.1rem;
         background-color: $danger-color;
         color: white;
-        border-radius: .25rem;
+        border-radius: 0.25rem;
       }
 
       .highlight {
@@ -77,7 +78,8 @@
       .project-info {
         width: 67.5%;
         height: 100%;
-        padding: 1.25rem;
+        padding: 0.9rem;
+        padding-left: 1.25rem;
         padding-right: 0%;
         display: flex;
         flex-direction: column;
@@ -86,22 +88,34 @@
 
         .wrapper {
           width: 100%;
-          height: 100%;
+          height: 82.5%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
 
           .project-type {
-            padding: .5rem .4rem;
+            font-size: 1.5rem;
+            padding: 0.75rem 0.5rem;
             width: max-content;
             height: 20%;
             background-color: $primary-color;
             color: white;
-            border-radius: .5rem;
+            border-radius: 0.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
           }
 
           .project-title {
-            font-size: 1.55rem;
+            width: 100%;
+            height: 50%;
+            font-size: 2rem;
+            overflow-x: auto;
+          }
+
+          .project-title::-webkit-scrollbar {
+            display: none;
           }
 
           .project-description {
@@ -116,13 +130,14 @@
         }
 
         .project-status {
+          height: 17.5%;
           font-size: 0.85rem;
           opacity: 0.8;
         }
       }
 
       .project-progress {
-        width: 30%;
+        width: 29.5%;
         height: 100%;
         padding-left: 0.5rem;
         padding-right: 1.35rem;
