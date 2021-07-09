@@ -17,7 +17,7 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
   const [questType, setQuestType] = useState("");
   const [questDiff, setQuestDiff] = useState("");
   const [questDesc, setQuestDesc] = useState("");
-  const [questTask, setQuestTask] = useState("");
+  const [questClearConditions, setQuestClearConditions] = useState("");
   const [questSkill, setQuestSkill] = useState("");
   const [questSkills, setQuestSkills] = useState<string[]>([]);
 
@@ -39,7 +39,7 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
     setQuestType("");
     setQuestDiff("");
     setQuestDesc("");
-    setQuestTask("");
+    setQuestClearConditions("");
     setQuestSkills([]);
   };
 
@@ -48,9 +48,11 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
     const quest: QuestObj = {
       name: questName,
       type: questType,
+      series: "Project",
+      category: "Project",
       diff: questDiff,
       description: questDesc,
-      task: [questTask],
+      clearConditions: [questClearConditions],
       skills: questSkills,
       rewards: generateRewards(questDiff)
     };
@@ -63,7 +65,7 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
     (questType === "Choose Type" || questType === "") &&
     (questDiff === "Choose Diff" || questDiff === "") &&
     questDesc === "" &&
-    questTask === "" 
+    questClearConditions === "" 
   
   useEffect(() => {
     if (!show) {
@@ -142,15 +144,15 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
               </Col>
             </Form.Row>
 
-            <Form.Row className="quest-task">
+            <Form.Row className="quest-clearConditions">
               <Col xs={11}>
-                <Form.Label>Quest Task</Form.Label>
+                <Form.Label>Quest clearConditions</Form.Label>
                 <Form.Control
                   as="textarea"
                   rows={1}
-                  placeholder="Enter Task"
-                  value={questTask}
-                  onChange={(e) => setQuestTask(e.target.value)}
+                  placeholder="Enter clearConditions"
+                  value={questClearConditions}
+                  onChange={(e) => setQuestClearConditions(e.target.value)}
                 />
               </Col>
             </Form.Row>

@@ -1,4 +1,4 @@
-.quest-list-page {
+.quest-list-page  {
   width: 100%;
   height: 100%;
 
@@ -71,14 +71,13 @@
             .highlight {
               width: 2.5%;
               height: 100%;
-              background-color: $quest-color;
               border-radius: 1rem 0 0 1rem;
             }
 
             .quest-info {
               width: 67.5%;
               height: 100%;
-              padding: 0.9rem;
+              padding: 1.15rem;
               padding-left: 1.25rem;
               padding-right: 0%;
               display: flex;
@@ -99,7 +98,6 @@
                   padding: 0.75rem 0.5rem;
                   width: max-content;
                   height: 20%;
-                  background-color: $quest-color;
                   color: white;
                   border-radius: 0.5rem;
                   display: flex;
@@ -110,7 +108,11 @@
 
               .quest-name {
                 font-size: 2rem;
-                margin-top: 0.5rem;
+              }
+
+              .quest-rewards {
+                margin-top: auto;
+                font-size: 1.1rem;
               }
             }
 
@@ -128,7 +130,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: $quest-color;
+                // background-color: $quest-color;
                 color: white;
                 border-radius: 50%;
               }

@@ -1,4 +1,11 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBook,
+  faCode,
+  faDumbbell,
+  faBroom,
+} from "@fortawesome/free-solid-svg-icons";
 
 export const generateRewards = (diff: string) => {
   const baseGold = 100;
@@ -17,5 +24,12 @@ export const generateRewards = (diff: string) => {
   const goldReward = baseGold * multiplier;
   const expReward = baseExp * multiplier;
 
-  return {gold: goldReward, exp: expReward};
+  return { gold: goldReward, exp: expReward };
+};
+
+export const getIcon = (category: string) => {
+  if (category === "Studies") return <FontAwesomeIcon icon={faBook} />;
+  if (category === "Coding") return <FontAwesomeIcon icon={faCode} />;
+  if (category === "Fitness") return <FontAwesomeIcon icon={faDumbbell} />;
+  if (category === "Chore") return <FontAwesomeIcon icon={faBroom} />;
 };

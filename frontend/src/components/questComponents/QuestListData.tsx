@@ -7,12 +7,12 @@ interface RewardsObj {
 
 export interface QuestObj {
   name: string;
-  category?: string;
+  category: string;
   type: string;
-  series?: string;
+  series: string;
   diff: string;
   description: string;
-  task: string[];
+  clearConditions: string[];
   skills: string[];
   rewards: RewardsObj;
 }
@@ -23,9 +23,9 @@ const QuestsData: QuestObj[] = [
     type: "Main",
     series: "Project Data",
     category: "Studies",
-    diff: "A",
-    description: "Plan the project",
-    task: ["Plan frontend", "Plan backend"],
+    diff: "C",
+    description: "Planning is essential for smooth work down the line. Plan the project. ",
+    clearConditions: ["Plan frontend", "Plan backend"],
     skills: ["Brain Power", "Management"],
     rewards: {
       gold: 1000,
@@ -37,9 +37,9 @@ const QuestsData: QuestObj[] = [
     type: "Main",
     series: "Project Data",
     category: "Coding",
-    diff: "A",
+    diff: "B",
     description: "Plan the project",
-    task: ["Design frontend", "Design backend"],
+    clearConditions: ["Design frontend", "Design backend"],
     skills: ["Figma", "Database"],
     rewards: {
       gold: 1000,
@@ -53,7 +53,7 @@ const QuestsData: QuestObj[] = [
     category: "Coding",
     diff: "A",
     description: "Plan the project",
-    task: ["Build frontend", "Build backend"],
+    clearConditions: ["Build frontend", "Build backend"],
     skills: ["React", "MongoDB"],
     rewards: {
       gold: 1000,
@@ -65,9 +65,9 @@ const QuestsData: QuestObj[] = [
     type: "Daily",
     series: "Basic Fitness",
     category: "Fitness",
-    diff: "A",
+    diff: "E",
     description: "Plan the project",
-    task: ["Plan frontend", "Plan backend"],
+    clearConditions: ["Plan frontend", "Plan backend"],
     skills: ["Push", "Discipline"],
     rewards: {
       gold: 1000,
@@ -79,9 +79,23 @@ const QuestsData: QuestObj[] = [
     type: "Weekly",
     series: "Chore",
     category: "Chore",
-    diff: "A",
+    diff: "F",
     description: "Plan the project",
-    task: ["Plan frontend", "Plan backend"],
+    clearConditions: ["Plan frontend", "Plan backend"],
+    skills: ["Cleanliness", "Management"],
+    rewards: {
+      gold: 1000,
+      exp: 1000,
+    },
+  },
+  {
+    name: "Job",
+    type: "Weekly",
+    series: "Life Goals",
+    category: "Studies",
+    diff: "S",
+    description: "Plan the project",
+    clearConditions: ["Plan frontend", "Plan backend"],
     skills: ["Cleanliness", "Management"],
     rewards: {
       gold: 1000,

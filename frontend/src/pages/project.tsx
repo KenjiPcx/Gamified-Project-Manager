@@ -46,7 +46,7 @@ function Project() {
   return (
     <div className="project-details-page">
       <BackHeaderWithEdit
-        pageTitle="Projects Details"
+        pageTitle="Project Details"
         prevPageLink="/projectlist"
         showEdit={showEdit}
         edit={toggleShowEdit}

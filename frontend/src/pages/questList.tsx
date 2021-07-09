@@ -96,8 +96,7 @@ function QuestList() {
                     diff={quest.diff}
                     category={quest.category}
                     series={quest.series}
-                    task={quest.task}
-                    type={quest.type}
+                    rewards={quest.rewards}
                     key={key}
                   />
                 );
