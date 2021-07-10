@@ -43,9 +43,13 @@
   position: relative;
 }
 
+.header .label-only {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .header .label {
   width: 55%;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
 }
@@ -1609,6 +1613,332 @@
   position: absolute;
   left: 17.5%;
   top: 30%;
+}
+
+.user-page {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f1f1f1;
+}
+
+.user-page .main-content {
+  width: 95%;
+  height: calc(100% - 9vh);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2.5%;
+  border-radius: 20px;
+}
+
+.user-page .main-content .user-card {
+  width: 100%;
+  height: 95%;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-shadow: 0.1rem 0.3rem 0 0 #dbdbdb, 0.2rem 0 0 #afafaf;
+          box-shadow: 0.1rem 0.3rem 0 0 #dbdbdb, 0.2rem 0 0 #afafaf;
+  background-color: white;
+  overflow: hidden;
+}
+
+.user-page .main-content .user-card .highlight {
+  width: 3%;
+  height: 100%;
+  background-color: #91C4FF;
+  border-radius: 20px 0 0 20px;
+}
+
+.user-page .main-content .user-card .card-details {
+  width: 97%;
+  height: 100%;
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1.5rem;
+  position: relative;
+  font-size: 1.3rem;
+}
+
+.user-page .main-content .user-card .card-details .label {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.user-page .main-content .user-card .card-details .basic-info-container {
+  width: 100%;
+  height: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.user-page .main-content .user-card .card-details .basic-info-container .name {
+  font-size: 2rem;
+}
+
+.user-page .main-content .user-card .card-details .basic-info-container .level-bar .bar {
+  height: 22.5px;
+  border-radius: 20px;
+}
+
+.user-page .main-content .user-card .card-details .basic-info-container .level-bar .bar .progress-bar {
+  background-color: #43db7d;
+  color: #43db7d;
+  border-radius: 20px;
+}
+
+.user-page .main-content .user-card .card-details .basic-info-container .level-bar .exp-rem {
+  font-size: 1.15rem;
+  opacity: 0.85;
+}
+
+.user-page .main-content .user-card .card-details .attribute {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0.25rem;
+}
+
+.user-page .main-content .user-card .card-details .nospace {
+  margin: 0;
+}
+
+.user-page .main-content .user-card .card-details .profile-pic {
+  width: 175px;
+  height: 175px;
+  background-color: #91C4FF;
+  position: absolute;
+  right: -55px;
+  top: -70px;
+  border-radius: 50%;
+}
+
+.user-page .main-content .user-card .card-details .profile-pic .pic {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  left: 30px;
+  bottom: 22.5px;
+}
+
+.user-page .main-content .user-card .card-details .stats-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-page .main-content .user-card .card-details .stats-container .stats-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.user-page .main-content .user-card .card-details .stats-container .stats-header .label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+}
+
+.user-page .main-content .user-card .card-details .stats-container .stats-header .cbtn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0;
+          flex: 0 0;
+  padding: 0.15rem 0.3rem;
+  border-radius: 1rem;
+  color: white;
+}
+
+.user-page .main-content .user-card .card-details .stats-container .stats-header .cstats-btn {
+  margin-right: 0.75rem;
+  background-color: #4098ff;
+}
+
+.user-page .main-content .user-card .card-details .stats-container .stats-header .fstats-btn {
+  background-color: #3dd1a5;
+}
+
+.user-page .main-content .user-card .card-details .stats-container .stats {
+  width: 90%;
+}
+
+.user-page .main-content .user-card .card-details .stats-container .stats .stats-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.user-page .main-content .user-card .card-details .custom-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-page .main-content .user-card .card-details .custom-container .custom-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.user-page .main-content .user-card .card-details .custom-container .custom-header .label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+}
+
+.user-page .main-content .user-card .card-details .custom-container .custom-header .custom-btn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0;
+          flex: 0 0;
+  padding: 0.15rem 0.3rem;
+  border-radius: 1rem;
+  color: white;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.user-page .main-content .user-card .card-details .custom-container .custom-header .custom-btn a {
+  color: white;
+}
+
+.user-page .main-content .user-card .card-details .custom-container .custom-header .skill-tree-btn {
+  background-color: #88c722;
+}
+
+.user-page .main-content .user-card .card-details .custom-container .custom-header .achievements-btn {
+  background-color: #faba5c;
+}
+
+.user-page .main-content .user-card .card-details .custom-container .list {
+  width: 90%;
+}
+
+.user-page .main-content .user-card .card-details .custom-container .list .list-item {
+  margin-bottom: 0.25rem;
+}
+
+.user-page .main-content .user-card .card-details .statistics-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-page .main-content .user-card .card-details .statistics-container .statistics-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.user-page .main-content .user-card .card-details .statistics-container .statistics-header .label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+}
+
+.user-page .main-content .user-card .card-details .statistics-container .statistics-header .statistics-btn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0;
+          flex: 0 0;
+  padding: 0.15rem 0.3rem;
+  border-radius: 1rem;
+  color: white;
+  background-color: #eb729a;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.user-page .main-content .user-card .card-details .statistics-container .statistics {
+  width: 90%;
+}
+
+.user-page .main-content .user-card .card-details .statistics-container .statistics .day-streak {
+  margin-bottom: 0.25rem;
 }
 
 .app {

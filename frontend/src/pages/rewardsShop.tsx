@@ -1,11 +1,11 @@
 import React from 'react'
 
-function rewardsShop() {
+function RewardsShop() {
     return (
         <div>
-            
+            Rewards
         </div>
     )
 }
 
-export default rewardsShop
+export default RewardsShop

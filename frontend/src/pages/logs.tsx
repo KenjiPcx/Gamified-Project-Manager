@@ -1,11 +1,11 @@
 import React from 'react'
 
-function logs() {
+function Logs() {
     return (
         <div>
-            
+            Logs
         </div>
     )
 }
 
-export default logs
+export default Logs

@@ -1,13 +1,13 @@
 import React from 'react'
 
-function achievements() {
+function Achievements() {
     return (
         <div>
-            
+            Achievements
         </div>
     )
 }
 
-export default achievements
+export default Achievements
 
 

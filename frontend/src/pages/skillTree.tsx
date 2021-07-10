@@ -1,11 +1,11 @@
 import React from 'react'
 
-function skillTree() {
+function SkillTree() {
     return (
         <div>
-            
+            skill tree
         </div>
     )
 }
 
-export default skillTree
+export default SkillTree
