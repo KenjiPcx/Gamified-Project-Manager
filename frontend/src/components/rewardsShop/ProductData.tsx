@@ -47,37 +47,37 @@ export const FoodProducts: ProductObj[] = [
 export const EntertainmentProducts: ProductObj[] = [
   {
     name: "Youtube Pass",
-    duration: "(1 Hour)",
+    duration: "1 Hour",
     price: 5,
   },
   {
     name: "Youtube Pass",
-    duration: "(3 Hour)",
+    duration: "3 Hour",
     price: 10,
   },
   {
     name: "Anime Pass",
-    duration: "(1 Hour)",
+    duration: "1 Hour",
     price: 5,
   },
   {
     name: "Anime Pass",
-    duration: "(3 Hour)",
+    duration: "3 Hour",
     price: 10,
   },
   {
     name: "Dota Game",
-    duration: "(1)",
+    duration: "1",
     price: 5,
   },
   {
     name: "Dota Game",
-    duration: "(3)",
+    duration: "3",
     price: 10,
   },
   {
     name: "Tetris Game",
-    duration: "(10)",
+    duration: "10",
     price: 5,
   },
 ];
@@ -116,37 +116,37 @@ export const TechProducts: ProductObj[] = [
 export const HolidayProducts: ProductObj[] = [
   {
     name: "Work Pass",
-    duration: "(1 Day)",
+    duration: "1 Day",
     price: 1000,
   },
   {
     name: "Work Pass",
-    duration: "(3 Day)",
+    duration: "3 Day",
     price: 2500,
   },
   {
     name: "Work Pass",
-    duration: "(1 Week)",
+    duration: "1 Week",
     price: 5000,
   },
   {
     name: "Work Pass",
-    duration: "(2 Week)",
+    duration: "2 Week",
     price: 8500,
   },
   {
     name: "Japan Trip",
-    duration: "(1 Week)",
+    duration: "1 Week",
     price: 50000,
   },
   {
     name: "Japan Trip",
-    duration: "(2 Week)",
+    duration: "2 Week",
     price: 100000,
   },
   {
     name: "Japan Trip",
-    duration: "(1 Month)",
+    duration: "1 Month",
     price: 150000,
   },
 ];

@@ -8,23 +8,69 @@
 
   .modal-content {
     border-radius: 20px;
-    height: 50%;
-    font-size: 1.5rem;
+    height: 55%;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
 
-    .model-header {
-    }
-    .model-body {
-      padding: 1.5rem;
+.modal-header {
+  background-color: $secondary-bg-color;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  align-items: center;
 
-      .modal-row {
-        margin-bottom: 1rem;
-        
-        .test {
-            font-weight: bold;
-        }
-      }
+  .modal-title,
+  .h4 {
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+
+  .close {
+    font-size: 1.7rem;
+  }
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .modal-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+
+    .label {
+      font-weight: bold;
+      margin-bottom: 0.25rem;
     }
-    .modal-footer {
-    }
+  }
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0 0 20px 20px;
+  background-color: $secondary-bg-color;
+
+  .custom-btn {
+    color: white;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+  }
+
+  .close-btn {
+    background-color: $danger-color;
+    cursor: pointer;
+  }
+
+  .confirm-btn {
+    background-color: $success-color;
+    cursor: pointer;
   }
 }

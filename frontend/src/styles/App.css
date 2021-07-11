@@ -212,20 +212,100 @@
 
 .modal-dialog .modal-content {
   border-radius: 20px;
-  height: 50%;
-  font-size: 1.5rem;
+  height: 55%;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.modal-dialog .modal-content .model-body {
-  padding: 1.5rem;
+.modal-header {
+  background-color: #f1f1f1;
+  border-radius: 20px 20px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.modal-dialog .modal-content .model-body .modal-row {
-  margin-bottom: 1rem;
-}
-
-.modal-dialog .modal-content .model-body .modal-row .test {
+.modal-header .modal-title,
+.modal-header .h4 {
+  font-size: 1.7rem;
   font-weight: bold;
+}
+
+.modal-header .close {
+  font-size: 1.7rem;
+}
+
+.modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.modal-body .modal-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1.5rem;
+}
+
+.modal-body .modal-row .label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.modal-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 0 0 20px 20px;
+  background-color: #f1f1f1;
+}
+
+.modal-footer .custom-btn {
+  color: white;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+}
+
+.modal-footer .close-btn {
+  background-color: #db3838;
+  cursor: pointer;
+}
+
+.modal-footer .confirm-btn {
+  background-color: #43db7d;
+  cursor: pointer;
 }
 
 .project-list-page {

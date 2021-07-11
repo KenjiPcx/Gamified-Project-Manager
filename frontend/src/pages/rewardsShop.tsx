@@ -51,7 +51,6 @@ function RewardsShop() {
   const setPage = () => {
     if (scroll) {
       setTimeout(() => {
-        console.log(scroll.scrollLeft);
         if (scroll.scrollLeft > 900) {
           return setPageNo((prevVal) => 4);
         }
