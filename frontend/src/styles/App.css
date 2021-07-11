@@ -200,6 +200,34 @@
   margin-left: 0.5rem;
 }
 
+.modal-dialog {
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-30%);
+          transform: translateX(-50%) translateY(-30%);
+}
+
+.modal-dialog .modal-content {
+  border-radius: 20px;
+  height: 50%;
+  font-size: 1.5rem;
+}
+
+.modal-dialog .modal-content .model-body {
+  padding: 1.5rem;
+}
+
+.modal-dialog .modal-content .model-body .modal-row {
+  margin-bottom: 1rem;
+}
+
+.modal-dialog .modal-content .model-body .modal-row .test {
+  font-weight: bold;
+}
+
 .project-list-page {
   width: 100%;
   height: 100%;
@@ -1664,7 +1692,7 @@
 .user-page .main-content .user-card .highlight {
   width: 3%;
   height: 100%;
-  background-color: #91C4FF;
+  background-color: #91c4ff;
   border-radius: 20px 0 0 20px;
 }
 
@@ -1694,7 +1722,7 @@
 
 .user-page .main-content .user-card .card-details .basic-info-container {
   width: 100%;
-  height: 25%;
+  height: 25.5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1711,9 +1739,14 @@
   font-size: 2rem;
 }
 
+.user-page .main-content .user-card .card-details .basic-info-container .level-bar .level {
+  margin-bottom: .2rem;
+}
+
 .user-page .main-content .user-card .card-details .basic-info-container .level-bar .bar {
   height: 22.5px;
   border-radius: 20px;
+  margin-bottom: .1rem;
 }
 
 .user-page .main-content .user-card .card-details .basic-info-container .level-bar .bar .progress-bar {
@@ -1741,9 +1774,9 @@
 .user-page .main-content .user-card .card-details .profile-pic {
   width: 175px;
   height: 175px;
-  background-color: #91C4FF;
+  background-color: #91c4ff;
   position: absolute;
-  right: -55px;
+  right: -60px;
   top: -70px;
   border-radius: 50%;
 }
@@ -1939,6 +1972,260 @@
 
 .user-page .main-content .user-card .card-details .statistics-container .statistics .day-streak {
   margin-bottom: 0.25rem;
+}
+
+.rewards-shop-page {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+}
+
+.rewards-shop-page .main-content {
+  width: 95%;
+  height: calc(100% - 9vh);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2.5%;
+  border-radius: 20px;
+}
+
+.rewards-shop-page .main-content .shop {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.rewards-shop-page .main-content .shop .shop-banner {
+  width: 100%;
+  height: 20%;
+  background-color: #6a78f4;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0.1rem 0.3rem 0 0 #dbdbdb, 0.2rem 0 0 #afafaf;
+          box-shadow: 0.1rem 0.3rem 0 0 #dbdbdb, 0.2rem 0 0 #afafaf;
+}
+
+.rewards-shop-page .main-content .shop .shop-banner .info-container {
+  width: 70%;
+  height: 100%;
+  padding: 1rem;
+  padding-right: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.rewards-shop-page .main-content .shop .shop-banner .info-container .title {
+  font-size: 1.45rem;
+  font-weight: bold;
+}
+
+.rewards-shop-page .main-content .shop .shop-banner .info-container .points-balance {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  background-color: #5FE8B6;
+  border-radius: 20px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+}
+
+.rewards-shop-page .main-content .shop .shop-banner .logo {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 1rem;
+}
+
+.rewards-shop-page .main-content .shop .shop-banner .logo .icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog {
+  width: 100%;
+  height: 84.5%;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  padding: 0.75rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .shop-header {
+  width: 100%;
+  height: 6%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .shop-body {
+  height: 91%;
+  width: 100%;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  overflow-x: auto;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .shop-body .page {
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  padding: 0.75rem 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  scroll-snap-align: start;
+  overflow-y: auto;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .shop-body .page .product {
+  background-color: white;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 1rem;
+  position: relative;
+  height: 100%;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .shop-body .page .product .name {
+  font-size: 1.35rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .shop-body .page .product .duration {
+  font-size: 1.2rem;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .shop-body .page .product .price {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #5FE8B6;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .shop-body .page .page::-webkit-scrollbar {
+  display: none;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .shop-body::-webkit-scrollbar {
+  display: none;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .page-tracker {
+  width: 25%;
+  height: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .page-tracker .pagination-dot {
+  width: 12.5px;
+  height: 12.5px;
+  border-radius: 50%;
+  background-color: #6a78f4;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .page-tracker .active {
+  opacity: 1;
+}
+
+.rewards-shop-page .main-content .shop .shop-catalog .page-tracker .inactive {
+  opacity: 0.5;
 }
 
 .app {

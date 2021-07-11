@@ -1,0 +1,30 @@
+.modal-dialog {
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-30%);
+
+  .modal-content {
+    border-radius: 20px;
+    height: 50%;
+    font-size: 1.5rem;
+
+    .model-header {
+    }
+    .model-body {
+      padding: 1.5rem;
+
+      .modal-row {
+        margin-bottom: 1rem;
+        
+        .test {
+            font-weight: bold;
+        }
+      }
+    }
+    .modal-footer {
+    }
+  }
+}

@@ -9,6 +9,7 @@
 
 // Custom Ui Components
 @import './components/customUiComponents/pill';
+@import './components/customUiComponents/modal';
 
 // Pages
 @import './pages/projectsList';
@@ -16,6 +17,7 @@
 @import './pages/questsList';
 @import './pages/questDetail';
 @import './pages/userPage';
+@import './pages/rewardsShop';
 
 .app {
     width: 100%;

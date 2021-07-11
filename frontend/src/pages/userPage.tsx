@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/headers/Header";
 import Image from "react-bootstrap/Image";
-import ProfilePic from "../assets/profilePic.jpg";
+import ProfilePic from "../assets/kenji.png";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { Link } from "react-router-dom";
 
