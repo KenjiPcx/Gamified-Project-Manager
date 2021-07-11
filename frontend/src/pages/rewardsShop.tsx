@@ -11,6 +11,7 @@ import ProductObj, {
 } from "../components/rewardsShop/ProductData";
 
 function RewardsShop() {
+  const [scroll, setScroll] = useState(document.querySelector(".shop-body"));
   const [balance, setBalance] = useState(1000000);
   const [pageNo, setPageNo] = useState(1);
   const pages = [1, 2, 3, 4];
@@ -46,8 +47,6 @@ function RewardsShop() {
     );
   };
 
-  const scroll = document.querySelector(".shop-body");
-
   const setPage = () => {
     if (scroll) {
       setTimeout(() => {
@@ -63,22 +62,28 @@ function RewardsShop() {
         return setPageNo((prevVal) => 1);
       }, 500);
     }
-    };
-    
-    const getPageName = () => {
-        if (pageNo === 1) {
-            return "Food"
-        }
-        if (pageNo === 2) {
-            return "Tech"
-        }
-        if (pageNo === 3) {
-            return "Entertainment"
-        }
-        if (pageNo === 4) {
-            return "Holiday"
-        }
+  };
+
+  const getPageName = () => {
+    if (pageNo === 1) {
+      return "Food";
     }
+    if (pageNo === 2) {
+      return "Tech";
+    }
+    if (pageNo === 3) {
+      return "Entertainment";
+    }
+    if (pageNo === 4) {
+      return "Holiday";
+    }
+  };
+
+  useEffect(() => {
+    if (scroll === null) {
+      setScroll(document.querySelector(".shop-body"));
+    }
+  }, [scroll]);
 
   return (
     <div className="rewards-shop-page">

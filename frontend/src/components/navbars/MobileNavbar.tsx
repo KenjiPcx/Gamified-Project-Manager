@@ -1,17 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  faClipboardList,
-  faGift,
-  faHome,
-  faQuestionCircle,
-  faUserCircle,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link, useLocation } from "react-router-dom";
 import NavbarData from "./NavbarData";
 
 function MobileNavbar() {
-  const [selected, setSelected] = useState(0);
+  let location = useLocation().pathname;
 
   return (
     <div className="mobile-navbar">
@@ -20,8 +12,7 @@ function MobileNavbar() {
           <Link
             to={navbarItem.link}
             key={key}
-            className={`nav-link ${selected === key ? "selected" : ""}`}
-            onClick={() => setSelected(key)}
+            className={`nav-link ${location === navbarItem.link ? "selected" : ""}`}
           >
             {navbarItem.icon}
           </Link>
