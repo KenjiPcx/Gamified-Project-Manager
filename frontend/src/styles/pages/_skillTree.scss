@@ -1,0 +1,28 @@
+.skilltree-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+
+  .main-content {
+    width: 95%;
+    height: calc(100% - 9vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2.5%;
+    border-radius: 20px;
+
+    .skilltree {
+      width: 100%;
+      height: 95%;
+      border-radius: 30px;
+      display: flex;
+      overflow: hidden;
+      background-color: $secondary-bg-color;
+      overflow: hidden;
+    }
+  }
+}
