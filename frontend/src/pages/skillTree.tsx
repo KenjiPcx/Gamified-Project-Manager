@@ -125,7 +125,6 @@ function SkillTree() {
   };
 
   const displayGraph = useMemo(() => {
-    console.log(graph);
     return (
       <Graph
         ref={networkRef}

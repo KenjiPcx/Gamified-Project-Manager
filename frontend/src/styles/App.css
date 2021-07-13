@@ -308,6 +308,298 @@
   cursor: pointer;
 }
 
+.dashboard-page {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f1f1f1;
+}
+
+.dashboard-page .dashboard-header {
+  width: 100%;
+  height: 20vh;
+  border-radius: 0 0 20px 20px;
+  background-color: #3278ff;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1.5rem 2rem;
+}
+
+.dashboard-page .dashboard-header .greeting {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 2.75rem;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard-page .dashboard-header .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dashboard-page .dashboard-header .details .sublabel {
+  font-size: 1.75rem;
+  border-radius: 20px;
+  padding: 0.5rem;
+}
+
+.dashboard-page .dashboard-header .details .level {
+  background-color: #e04141;
+}
+
+.dashboard-page .dashboard-header .details .points {
+  background-color: #dfb440;
+}
+
+.dashboard-page .main-content {
+  width: 95%;
+  height: calc(100% - 20vh);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  padding: 0 1.5%;
+}
+
+.dashboard-page .main-content .shortcuts-menu {
+  width: 100%;
+  height: 15.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #91c4ff;
+  border-radius: 20px;
+  padding: 0.5rem 0.75rem;
+}
+
+.dashboard-page .main-content .shortcuts-menu .shortcut {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard-page .main-content .shortcuts-menu .shortcut .icon {
+  border-radius: 50%;
+  background-color: #878e96;
+  color: white;
+  width: 55px;
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.55rem;
+}
+
+.dashboard-page .main-content .shortcuts-menu .shortcut .shortcut-label {
+  font-weight: bold;
+}
+
+.dashboard-page .main-content .app-information {
+  width: 100%;
+  height: 25%;
+  border-radius: 20px;
+  background-color: #c5c5c5;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard-page .main-content .app-information .app-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+.dashboard-page .main-content .app-information .content-wrapper {
+  height: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard-page .main-content .app-information .content-wrapper .info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dashboard-page .main-content .app-information .content-wrapper .info-wrapper .app-version {
+  font-size: 2rem;
+}
+
+.dashboard-page .main-content .app-information .content-wrapper .info-wrapper .app-age {
+  font-size: 2rem;
+}
+
+.dashboard-page .main-content .app-information .icon {
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard-page .main-content .daily-quests-container {
+  width: 100%;
+  height: 35.5%;
+}
+
+.dashboard-page .main-content .daily-quests-container .label {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-page .main-content .daily-quests-container .daily-quests {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  height: 85%;
+  border-radius: 20px;
+  background-color: #c5c5c5;
+  padding: 5% 2.5%;
+}
+
+.dashboard-page .main-content .daily-quests-container .daily-quests a {
+  color: black;
+}
+
+.dashboard-page .main-content .daily-quests-container .daily-quests .quest-block:first-child {
+  margin-left: 2.5%;
+}
+
+.dashboard-page .main-content .daily-quests-container .daily-quests .quest-block:last-child {
+  margin-right: 2.5%;
+}
+
+.dashboard-page .main-content .daily-quests-container .daily-quests .quest-block {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 45%;
+          flex: 0 0 45%;
+  margin-left: 5%;
+  border-radius: 20px;
+  padding: 1rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.dashboard-page .main-content .daily-quests-container .daily-quests .quest-block .name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.dashboard-page .main-content .daily-quests-container .daily-quests .quest-block .icon {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  font-size: 2.5rem;
+  opacity: 0.25;
+}
+
+.dashboard-page .main-content .daily-quests-container .daily-quests .quest-block .rewards {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.dashboard-page .main-content .daily-quests-container .daily-quests::-webkit-scrollbar {
+  display: none;
+}
+
 .project-list-page {
   width: 100%;
   height: 100%;
