@@ -12,12 +12,14 @@ interface NodeObj {
   imagePadding?: number;
 }
 
-interface GraphObj {
+interface EdgeObj {
+  from: number;
+  to: number;
+}
+
+export interface GraphObj {
   nodes: NodeObj[];
-  edges: {
-    from: number;
-    to: number;
-  }[];
+  edges: EdgeObj[];
 }
 
 const GraphData: GraphObj = {
@@ -41,7 +43,14 @@ const GraphData: GraphObj = {
   edges: [],
 };
 
-const mapSkill = (skill: SkillObj) => {
+export const mapSkill = (skill: SkillObj) => {
+  let node: NodeObj = mapSkillNode(skill);
+  const edge: EdgeObj = mapSkillEdge(skill);
+  GraphData.nodes.push(node);
+  GraphData.edges.push(edge);
+};
+
+export const mapSkillNode = (skill: SkillObj) => {
   let node: NodeObj = {
     id: skill.id,
     label: skill.name,
@@ -64,11 +73,15 @@ const mapSkill = (skill: SkillObj) => {
       shape: "box",
     };
   }
-  GraphData.nodes.push(node);
-  GraphData.edges.push({
+  return node;
+};
+
+export const mapSkillEdge = (skill: SkillObj) => {
+  const edge: EdgeObj = {
     from: skill.parentId,
     to: skill.id,
-  });
+  };
+  return edge;
 };
 
 SkillData.forEach((skill) => mapSkill(skill));
@@ -78,6 +91,7 @@ export const GraphOptions = {
     hierarchical: false,
   },
   nodes: {
+    brokenImage: Logo,
     borderWidth: 0,
     shape: "ellipse",
     shapeProperties: {

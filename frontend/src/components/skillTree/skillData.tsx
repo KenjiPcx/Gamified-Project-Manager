@@ -22,7 +22,7 @@ export interface SkillObj {
 
 export const getId = (skillName: string) => {
   for (let index = 0; index < SkillData.length; index++) {
-    if (SkillData[index].name.replace("\n", "") === skillName) {
+    if (SkillData[index].name.replace("\n", "").toLowerCase() === skillName.toLowerCase()) {
       return SkillData[index].id;
     }
   }
