@@ -20,15 +20,6 @@ export interface SkillObj {
   exp?: number;
 }
 
-export const getId = (skillName: string) => {
-  for (let index = 0; index < SkillData.length; index++) {
-    if (SkillData[index].name.replace("\n", "").toLowerCase() === skillName.toLowerCase()) {
-      return SkillData[index].id;
-    }
-  }
-  return -1;
-};
-
 const SkillData: SkillObj[] = [
   {
     id: 1,

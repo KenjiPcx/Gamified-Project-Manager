@@ -2,7 +2,7 @@ import React from "react";
 import SkillData, { SkillObj } from "./skillData";
 import Logo from "./kenji.jpeg";
 
-interface NodeObj {
+export interface NodeObj {
   id: number;
   label: string;
   title: string;
@@ -12,7 +12,8 @@ interface NodeObj {
   imagePadding?: number;
 }
 
-interface EdgeObj {
+export interface EdgeObj {
+  id: number;
   from: number;
   to: number;
 }
@@ -45,7 +46,7 @@ const GraphData: GraphObj = {
 
 export const mapSkill = (skill: SkillObj) => {
   let node: NodeObj = mapSkillNode(skill);
-  const edge: EdgeObj = mapSkillEdge(skill);
+  const edge: EdgeObj = mapSkillEdge(skill, GraphData.edges);
   GraphData.nodes.push(node);
   GraphData.edges.push(edge);
 };
@@ -76,8 +77,9 @@ export const mapSkillNode = (skill: SkillObj) => {
   return node;
 };
 
-export const mapSkillEdge = (skill: SkillObj) => {
+export const mapSkillEdge = (skill: SkillObj, graphEdges: EdgeObj[]) => {
   const edge: EdgeObj = {
+    id: graphEdges.length + 1,
     from: skill.parentId,
     to: skill.id,
   };
@@ -118,12 +120,6 @@ export const GraphOptions = {
   autoResize: true,
   height: "100%",
   width: "100%",
-};
-
-export const GraphEvents = {
-  select: function (event: any) {
-    let { nodes, edges } = event;
-  },
 };
 
 export default GraphData;

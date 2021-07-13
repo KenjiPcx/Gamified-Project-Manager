@@ -1,15 +1,15 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import GraphData, {
-  GraphOptions,
-  GraphEvents,
   mapSkillNode,
   mapSkillEdge,
 } from "../components/skillTree/graphData";
-import SkillData, { SkillObj, getId } from "../components/skillTree/skillData";
+import SkillData, { SkillObj } from "../components/skillTree/skillData";
 import BackHeaderWithEdit from "../components/headers/BackHeaderWithEdit";
 import Graph from "react-graph-vis";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import Logo from "../components/skillTree/kenji.jpeg";
 
 function SkillTree() {
   const networkRef = useRef(null);
@@ -22,8 +22,55 @@ function SkillTree() {
   const [type, setType] = useState("");
   const [filePath, setFilePath] = useState("");
   const [parent, setParent] = useState("");
-  const options = GraphOptions;
-  const events = GraphEvents;
+
+  const options = {
+    layout: {
+      hierarchical: false,
+    },
+    nodes: {
+      brokenImage: Logo,
+      borderWidth: 0,
+      shape: "ellipse",
+      shapeProperties: {
+        borderRadius: 10, // only for box shape
+        interpolation: false, // only for image and circularImage shapes
+        useImageSize: false, // only for image and circularImage shapes
+        useBorderWithImage: false, // only for image shape
+        coordinateOrigin: "center", // only for image and circularImage shapes
+      },
+      imagePadding: 5,
+      size: 20,
+      margin: {
+        top: 5,
+        right: 20,
+        bottom: 5,
+        left: 20,
+      },
+      color: "#FFF",
+    },
+    edges: {
+      color: "#000000",
+      smooth: true,
+    },
+    manipulation: true,
+    autoResize: true,
+    height: "100%",
+    width: "100%",
+  };
+
+  const events = {
+    select: function ({ nodes, edges }: any) {
+      console.log("Nodes", nodes);
+      console.log("Edges", edges);
+    },
+    doubleClick: ({ nodes, edges }: any) => {
+      if (nodes.length !== 0 || edges.length !== 0) {
+        handleDelete(nodes, edges);
+      }
+    },
+    // click: ({ pointer: { canvas } }: any) => {
+    // },
+  };
 
   const setNetworkInstance = (nw: any) => {
     setNetwork(nw);
@@ -31,6 +78,19 @@ function SkillTree() {
 
   const toggleShow = () => {
     setShow(!show);
+  };
+
+  const getId = (nodeName: string) => {
+    const nodes = graph.nodes;
+    for (let index = 0; index < nodes.length; index++) {
+      if (
+        nodes[index].label.replace("\n", "").toLowerCase() ===
+        nodeName.toLowerCase()
+      ) {
+        return graph.nodes[index].id;
+      }
+    }
+    return -1;
   };
 
   const handleAdd = () => {
@@ -48,10 +108,16 @@ function SkillTree() {
     setSkillData((prevSkillData) => [...prevSkillData, skill]);
     setGraph({
       nodes: [...graph.nodes, mapSkillNode(skill)],
-      edges: [...graph.edges, mapSkillEdge(skill)],
+      edges: [...graph.edges, mapSkillEdge(skill, graph.edges)],
     });
-    console.log(skill);
     toggleShow();
+  };
+
+  const handleDelete = (nodeIds: number[], edgeIds: number[]) => {
+    setGraph({
+      nodes: [...graph.nodes.filter((node) => !nodeIds.includes(node.id))],
+      edges: [...graph.edges.filter((edge) => !edgeIds.includes(edge.id))],
+    });
   };
 
   const displayGraph = useMemo(() => {
@@ -83,7 +149,7 @@ function SkillTree() {
             maxZoomLevel: 2,
             animation: true,
           });
-        }, 2000);
+        }, 1500);
       }
     }
   }, [network]);
