@@ -14,8 +14,9 @@ import Logo from "../components/skillTree/kenji.jpeg";
 function SkillTree() {
   const networkRef = useRef(null);
   const [network, setNetwork] = useState<any>(null);
-  const [newNodeId, setNewNodeId] = useState(0);
   const [skillData, setSkillData] = useState(SkillData);
+  const [skillCtr, setSkillCtr] = useState(0);
+  const [edgeCtr, setEdgeCtr] = useState(GraphData.edges.length + 1);
   const [graph, setGraph] = useState(GraphData);
   const [show, setShow] = useState(false);
   const [skillName, setSkillName] = useState("");
@@ -52,7 +53,7 @@ function SkillTree() {
       color: "#000000",
       smooth: true,
     },
-    manipulation: true,
+    // manipulation: true,
     autoResize: true,
     height: "100%",
     width: "100%",
@@ -95,7 +96,7 @@ function SkillTree() {
 
   const handleAdd = () => {
     let skill: SkillObj = {
-      id: skillData.length + 1,
+      id: skillCtr + 1,
       name: skillName,
       type: type,
       parentId: getId(parent),
@@ -104,16 +105,19 @@ function SkillTree() {
     if (type === "Image") {
       skill = { ...skill, image: filePath };
     }
-    setNewNodeId((prevValue) => skillData.length + 1);
+    setSkillCtr((prevValue) => prevValue + 1);
     setSkillData((prevSkillData) => [...prevSkillData, skill]);
     setGraph({
       nodes: [...graph.nodes, mapSkillNode(skill)],
-      edges: [...graph.edges, mapSkillEdge(skill, graph.edges)],
+      edges: [...graph.edges, mapSkillEdge(skill, graph.edges, edgeCtr)],
     });
+    setEdgeCtr((prevValue) => prevValue + 1);
     toggleShow();
   };
 
   const handleDelete = (nodeIds: number[], edgeIds: number[]) => {
+    setSkillCtr((prevValue) => 0);
+    setSkillData(skillData.filter((skill) => !nodeIds.includes(skill.id)));
     setGraph({
       nodes: [...graph.nodes.filter((node) => !nodeIds.includes(node.id))],
       edges: [...graph.edges.filter((edge) => !edgeIds.includes(edge.id))],
@@ -121,6 +125,7 @@ function SkillTree() {
   };
 
   const displayGraph = useMemo(() => {
+    console.log(graph);
     return (
       <Graph
         ref={networkRef}
@@ -136,16 +141,18 @@ function SkillTree() {
   useEffect(() => {
     if (network) {
       network.fit({
-        nodes: [newNodeId],
-        minZoomLevel: 1,
+        nodes: [skillCtr],
+        minZoomLevel: 1.5,
         maxZoomLevel: 2,
         animation: true,
       });
-      if (newNodeId !== 0) {
+      if (skillCtr === 0) {
+        setSkillCtr(skillData.length);
+      } else {
         setTimeout(() => {
           network.fit({
             nodes: [0],
-            minZoomLevel: 1,
+            minZoomLevel: 1.5,
             maxZoomLevel: 2,
             animation: true,
           });

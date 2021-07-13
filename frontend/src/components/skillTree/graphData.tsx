@@ -46,9 +46,10 @@ const GraphData: GraphObj = {
 
 export const mapSkill = (skill: SkillObj) => {
   let node: NodeObj = mapSkillNode(skill);
-  const edge: EdgeObj = mapSkillEdge(skill, GraphData.edges);
+  const edge: EdgeObj = mapSkillEdge(skill, GraphData.edges, counter);
   GraphData.nodes.push(node);
   GraphData.edges.push(edge);
+  counter += 1;
 };
 
 export const mapSkillNode = (skill: SkillObj) => {
@@ -77,49 +78,16 @@ export const mapSkillNode = (skill: SkillObj) => {
   return node;
 };
 
-export const mapSkillEdge = (skill: SkillObj, graphEdges: EdgeObj[]) => {
+export const mapSkillEdge = (skill: SkillObj, graphEdges: EdgeObj[], counter: number) => {
   const edge: EdgeObj = {
-    id: graphEdges.length + 1,
+    id: counter,
     from: skill.parentId,
     to: skill.id,
   };
   return edge;
 };
 
+let counter = 1;
 SkillData.forEach((skill) => mapSkill(skill));
-
-export const GraphOptions = {
-  layout: {
-    hierarchical: false,
-  },
-  nodes: {
-    brokenImage: Logo,
-    borderWidth: 0,
-    shape: "ellipse",
-    shapeProperties: {
-      borderRadius: 10, // only for box shape
-      interpolation: false, // only for image and circularImage shapes
-      useImageSize: false, // only for image and circularImage shapes
-      useBorderWithImage: false, // only for image shape
-      coordinateOrigin: "center", // only for image and circularImage shapes
-    },
-    imagePadding: 5,
-    size: 20,
-    margin: {
-      top: 5,
-      right: 20,
-      bottom: 5,
-      left: 20,
-    },
-    color: "#FFF",
-  },
-  edges: {
-    color: "#000000",
-    smooth: true,
-  },
-  autoResize: true,
-  height: "100%",
-  width: "100%",
-};
 
 export default GraphData;
