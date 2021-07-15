@@ -61,7 +61,7 @@
       height: 15.5%;
       display: flex;
       justify-content: space-between;
-      background-color: $profile-color;
+      background-color: $dashboard-info-color;
       border-radius: 20px;
       padding: 0.5rem 0.75rem;
 
@@ -73,7 +73,7 @@
 
         .icon {
           border-radius: 50%;
-          background-color: $secondary-color;
+          background-color: $primary-color;
           color: white;
           width: 55px;
           height: 55px;
@@ -152,9 +152,10 @@
         border-radius: 20px;
         background-color: $dashboard-info-color;
         padding: 5% 2.5%;
+        scroll-snap-type: x mandatory;
 
         a {
-            color: black;
+          color: black;
         }
 
         .quest-block:first-child {
@@ -176,34 +177,32 @@
           justify-content: space-around;
 
           .name {
-              font-size: 2rem;
-              font-weight: bold;
+            font-size: 2rem;
+            font-weight: bold;
           }
 
           .icon {
-              position: absolute;
-              bottom: 10%;
-              right: 10%;
-              font-size: 2.5rem;
-              opacity: 0.25;
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            font-size: 2.5rem;
+            opacity: 0.25;
           }
 
           .rewards {
-              font-size: 1.25rem;
-              font-weight: bold;
-              .gold {
-                
-              }
+            font-size: 1.25rem;
+            font-weight: bold;
+            .gold {
+            }
 
-              .exp {
-
-              }
+            .exp {
+            }
           }
         }
       }
 
       .daily-quests::-webkit-scrollbar {
-          display: none;
+        display: none;
       }
     }
   }

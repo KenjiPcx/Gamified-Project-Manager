@@ -410,7 +410,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #91c4ff;
+  background-color: #c5c5c5;
   border-radius: 20px;
   padding: 0.5rem 0.75rem;
 }
@@ -433,7 +433,7 @@
 
 .dashboard-page .main-content .shortcuts-menu .shortcut .icon {
   border-radius: 50%;
-  background-color: #878e96;
+  background-color: #3278ff;
   color: white;
   width: 55px;
   height: 55px;
@@ -545,6 +545,8 @@
   border-radius: 20px;
   background-color: #c5c5c5;
   padding: 5% 2.5%;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
 }
 
 .dashboard-page .main-content .daily-quests-container .daily-quests a {

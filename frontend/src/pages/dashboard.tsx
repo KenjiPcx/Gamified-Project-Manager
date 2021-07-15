@@ -34,16 +34,6 @@ function Dashboard() {
             );
           })}
         </div>
-        <div className="app-information">
-          <div className="content-wrapper">
-            <div className="app-header">App Info</div>
-            <div className="info-wrapper">
-              <div className="app-version">Version: {appVers}</div>
-              <div className="app-age">Day {appAge} (alpha)</div>
-            </div>
-          </div>
-          <FontAwesomeIcon icon={faInfoCircle} className="icon" />
-        </div>
         <div className="daily-quests-container">
           <div className="label">Daily Quests</div>
           <div className="daily-quests">
@@ -59,6 +49,16 @@ function Dashboard() {
               );
             })}
           </div>
+        </div>
+        <div className="app-information">
+          <div className="content-wrapper">
+            <div className="app-header">App Info</div>
+            <div className="info-wrapper">
+              <div className="app-version">Version: {appVers}</div>
+              <div className="app-age">Day {appAge} (alpha)</div>
+            </div>
+          </div>
+          <FontAwesomeIcon icon={faInfoCircle} className="icon" />
         </div>
       </div>
     </div>
