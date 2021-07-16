@@ -5,6 +5,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
 interface ProjectsListItemProps {
+  id: string;
   title: string;
   type: string;
   description: string;
@@ -14,6 +15,7 @@ interface ProjectsListItemProps {
 }
 
 function ProjectsListItem({
+  id,
   title,
   type,
   description,
@@ -30,7 +32,7 @@ function ProjectsListItem({
     if (showDelete) {
       setShowDelete(false);
     } else if (!showDelete) {
-      history.push("/project");
+      history.push(`/project/${id}`);
     }
   };
 
@@ -56,7 +58,7 @@ function ProjectsListItem({
 
   return (
     <div
-      id={title}
+      id={id}
       className="projects-list-item"
       onTouchStart={handleLongPressStart}
       onTouchEnd={handleLongPressEnd}

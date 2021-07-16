@@ -628,6 +628,19 @@
   border-radius: 20px;
   background-color: #f1f1f1;
   padding: 3.5% 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .project-list-page .main-content .project-list-container .project-list {
@@ -1600,6 +1613,19 @@
   border-radius: 20px;
   background-color: #f1f1f1;
   padding: 3.5% 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .quest-list-page .main-content .quest-list-container .quest-list {
@@ -1663,6 +1689,10 @@
   overflow-y: scroll;
 }
 
+.quest-list-page .main-content .quest-list-container .quest-list .list a {
+  color: black;
+}
+
 .quest-list-page .main-content .quest-list-container .quest-list .list .quests-list-item {
   margin-bottom: 1rem;
   width: 100%;
@@ -1672,6 +1702,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-shadow: 0.15rem 0.1rem #e2e2e2;
           box-shadow: 0.15rem 0.1rem #e2e2e2;
   position: relative;
@@ -2013,7 +2049,7 @@
   font-size: 3rem;
   color: white;
   position: absolute;
-  left: 17.5%;
+  left: 14.5%;
   top: 30%;
 }
 

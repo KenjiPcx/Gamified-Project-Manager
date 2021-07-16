@@ -2,26 +2,38 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 
 export interface ProjectObj {
+  _id: string;
   title: string;
   type: string;
   term: string;
-  icon?: JSX.Element;
   description: string;
   dependencies: string[];
   skillsInvolved: string[];
   progress: number;
   status: string;
-  startDate: number;
+  createdAt?: string;
+  updatedAt?: string;
+  _v?: string;
 }
 
-const startDate = Date.now();
+export const BlankProject = {
+  _id: "Blank",
+  title: "Blank",
+  type: "Blank",
+  term: "Blank",
+  description: "Blank",
+  dependencies: ["Blank"],
+  skillsInvolved: ["Blank"],
+  progress: 0,
+  status: "Blank",
+};
 
 const ProjectsData: ProjectObj[] = [
   {
+    _id: "Preset",
     title: "Project Data",
     type: "Project",
     term: "Long",
-    icon: <FontAwesomeIcon icon={faUserGraduate} className="icon" />,
     description: "Collect Data on self. Use data to analyse performance",
     dependencies: [
       "Plan the Data",
@@ -30,12 +42,19 @@ const ProjectsData: ProjectObj[] = [
       "Analyse the Data",
       "Use the Data",
     ],
-    skillsInvolved: ["Python", "CS", "test sciece", "Data Science", "Analysis", "Improvement"],
+    skillsInvolved: [
+      "Python",
+      "CS",
+      "test sciece",
+      "Data Science",
+      "Analysis",
+      "Improvement",
+    ],
     progress: 20,
     status: "Building",
-    startDate: startDate,
   },
   {
+    _id: "Preset",
     title: "Project Prime",
     type: "Project",
     term: "Long",
@@ -44,9 +63,9 @@ const ProjectsData: ProjectObj[] = [
     skillsInvolved: [],
     progress: 25,
     status: "Building",
-    startDate: startDate,
   },
   {
+    _id: "Preset",
     title: "Life Skill Manager",
     type: "Coding",
     term: "Long",
@@ -55,9 +74,9 @@ const ProjectsData: ProjectObj[] = [
     skillsInvolved: [],
     progress: 20,
     status: "Building",
-    startDate: startDate,
   },
   {
+    _id: "Preset",
     title: "Prime Stamina",
     type: "Fitness",
     term: "Short",
@@ -66,9 +85,9 @@ const ProjectsData: ProjectObj[] = [
     skillsInvolved: [],
     progress: 10,
     status: "Building",
-    startDate: startDate,
   },
   {
+    _id: "Preset",
     title: "Flexible Body",
     type: "Fitness",
     term: "Short",
@@ -77,9 +96,9 @@ const ProjectsData: ProjectObj[] = [
     skillsInvolved: [],
     progress: 30,
     status: "Building",
-    startDate: startDate,
   },
   {
+    _id: "Preset",
     title: "Peak Strength",
     type: "Fitness",
     term: "Short",
@@ -88,7 +107,6 @@ const ProjectsData: ProjectObj[] = [
     skillsInvolved: [],
     progress: 100,
     status: "Building",
-    startDate: startDate,
   },
 ];
 

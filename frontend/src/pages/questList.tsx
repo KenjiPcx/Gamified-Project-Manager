@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react";
-
-// Components
+import React, { useState, useEffect, useRef } from "react";
 import ListHeader from "../components/headers/ListHeader";
 import QuestsData, {
   QuestObj,
 } from "../components/questComponents/QuestListData";
 import QuestsListItem from "../components/questComponents/QuestListItem";
+import axios from "axios";
+import Spinner from "react-bootstrap/Spinner";
 
 function QuestList() {
-  const [quests, setQuests] = useState(QuestsData);
+  const isMounted = useRef<boolean | null>(null);
+  const URL = "http://localhost:5000/quests/";
+  const [loading, setLoading] = useState(true);
+  const [quests, setQuests] = useState([]);
   const [filteredQuests, setFilteredQuests] = useState(QuestsData);
   const [search, setSearch] = useState("");
   const [type, setType] = useState("");
@@ -53,6 +56,24 @@ function QuestList() {
   };
 
   useEffect(() => {
+    isMounted.current = true;
+    axios.get(URL).then((res) => {
+      if (isMounted.current) {
+        setQuests(res.data);
+        setTimeout(() => {
+          if (isMounted.current) {
+            setLoading(false);
+          }
+        }, 500);
+      }
+    });
+
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
     setFilteredQuests(searchFilter(categoryFilter(typeFilter(quests))));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search, type, category, quests]);
@@ -67,42 +88,47 @@ function QuestList() {
       />
       <div className="main-content">
         <div className="quest-list-container">
-          <div className={"quest-list"}>
-            <div className="list-controls">
-              <div
-                className={`daily ${type === "Daily" ? "active" : ""}`}
-                onClick={() => handleClick("Daily")}
-              >
-                Daily
+          {loading ? (
+            <Spinner animation="border" className="spinner"></Spinner>
+          ) : (
+            <div className={"quest-list"}>
+              <div className="list-controls">
+                <div
+                  className={`daily ${type === "Daily" ? "active" : ""}`}
+                  onClick={() => handleClick("Daily")}
+                >
+                  Daily
+                </div>
+                <div
+                  className={`weekly ${type === "Weekly" ? "active" : ""}`}
+                  onClick={() => handleClick("Weekly")}
+                >
+                  Weekly
+                </div>
+                <div
+                  className={`main ${type === "Main" ? "active" : ""}`}
+                  onClick={() => handleClick("Main")}
+                >
+                  Main
+                </div>
               </div>
-              <div
-                className={`weekly ${type === "Weekly" ? "active" : ""}`}
-                onClick={() => handleClick("Weekly")}
-              >
-                Weekly
-              </div>
-              <div
-                className={`main ${type === "Main" ? "active" : ""}`}
-                onClick={() => handleClick("Main")}
-              >
-                Main
+              <div className="list">
+                {filteredQuests.map((quest, key) => {
+                  return (
+                    <QuestsListItem
+                      id={quest._id}
+                      name={quest.name}
+                      diff={quest.diff}
+                      category={quest.category}
+                      series={quest.series}
+                      rewards={quest.rewards}
+                      key={key}
+                    />
+                  );
+                })}
               </div>
             </div>
-            <div className="list">
-              {filteredQuests.map((quest, key) => {
-                return (
-                  <QuestsListItem
-                    name={quest.name}
-                    diff={quest.diff}
-                    category={quest.category}
-                    series={quest.series}
-                    rewards={quest.rewards}
-                    key={key}
-                  />
-                );
-              })}
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

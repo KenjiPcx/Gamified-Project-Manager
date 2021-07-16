@@ -1,8 +1,9 @@
 import React from "react";
 import { getIcon } from "../gameSystem/GameFunctions";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface QuestsListItemProps {
+  id: string;
   name: string;
   category: string;
   series: string;
@@ -11,20 +12,15 @@ interface QuestsListItemProps {
 }
 
 function QuestsListItem({
+  id,
   name,
   category,
   series,
   diff,
   rewards,
 }: QuestsListItemProps) {
-  let history = useHistory();
-
-  const handleRedirect = () => {
-    history.push("/quest");
-  };
-
   return (
-    <div id={name} className="quests-list-item" onClick={handleRedirect}>
+    <Link to={`/quest/${id}`} id={id} className="quests-list-item">
       <div className={`highlight ${diff}`}></div>
       <div className="quest-info">
         <div className="wrapper">
@@ -38,8 +34,7 @@ function QuestsListItem({
       <div className="icon-container">
         <div className={`icon ${diff}`}>{getIcon(category)}</div>
       </div>
-    </div>
+    </Link>
   );
 }
-
 export default QuestsListItem;

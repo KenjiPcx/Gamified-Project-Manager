@@ -16,6 +16,10 @@
       border-radius: 20px;
       background-color: $secondary-bg-color;
       padding: 3.5% 3%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       @import "../components/projects/list";
       @import "../components/projects/_projectForm.scss";

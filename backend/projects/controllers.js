@@ -19,6 +19,7 @@ const createProject = async (req, res) => {
       dependencies: req.body.dependencies,
       skillsInvolved: req.body.skillsInvolved,
       progress: req.body.progress,
+      status: req.body.status,
     });
     await project.save();
     res.status(200).json(project);
@@ -72,8 +73,8 @@ const deleteProjectById = async (req, res) => {
 const createProjects = async (req, res) => {
   try {
     const projectsData = req.body.projectsData;
-      const totalProjects = projectsData.length;
-      let successCtr = 0;
+    const totalProjects = projectsData.length;
+    let successCtr = 0;
     await projectsData.forEach(async (projectData) => {
       try {
         const project = Project({
@@ -84,10 +85,11 @@ const createProjects = async (req, res) => {
           dependencies: projectData.dependencies,
           skillsInvolved: projectData.skillsInvolved,
           progress: projectData.progress,
+          status: projectData.status,
         });
-          await project.save();
-          successCtr += 1;
-          console.log(`${successCtr}/${totalProjects}`);
+        await project.save();
+        successCtr += 1;
+        console.log(`${successCtr}/${totalProjects}`);
       } catch (err) {
         console.log("Failed to upload project data", successCtr);
       }
@@ -98,6 +100,15 @@ const createProjects = async (req, res) => {
   }
 };
 
+const deleteAllProjects = async (req, res) => {
+  try {
+    await Project.deleteMany({});
+    res.status(200).json({ res: "Deleted all projects" });
+  } catch (err) {
+    res.status(400).json({ err: "Failed to delete all projects" });
+  }
+};
+
 module.exports = {
   getAllProjects,
   getProjectById,
@@ -105,4 +116,5 @@ module.exports = {
   deleteProjectById,
   createProject,
   createProjects,
+  deleteAllProjects,
 };

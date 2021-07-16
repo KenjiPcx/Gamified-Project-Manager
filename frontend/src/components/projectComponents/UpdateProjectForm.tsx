@@ -8,7 +8,6 @@ import NewQuestForm from "./NewQuestForm";
 
 interface UpdateProjectFormProps {
   name: string;
-  date: string;
   type: string;
   term: string;
   icon?: JSX.Element;

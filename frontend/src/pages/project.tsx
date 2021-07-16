@@ -1,47 +1,70 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import BackHeaderWithEdit from "../components/headers/BackHeaderWithEdit";
-import ProjectsData from "../components/projectComponents/ProjectsListData";
+import {
+  BlankProject,
+  ProjectObj,
+} from "../components/projectComponents/ProjectsListData";
 import ProjectDetails from "../components/projectComponents/ProjectDetails";
 import UpdateProjectForm from "../components/projectComponents/UpdateProjectForm";
 import { ProgressBar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { getProjectIcon } from "../components/gameSystem/GameFunctions";
+import axios from "axios";
 
 function Project() {
-  const {
-    title,
-    term,
-    type,
-    icon,
-    startDate,
-    description,
-    dependencies,
-    skillsInvolved,
-    progress,
-  } = ProjectsData[0];
+  const isMounted = useRef<boolean | null>(null);
+  const { id } = useParams<{ id: string }>();
+  const [project, setProject] = useState<ProjectObj>(BlankProject);
+  const [loading, setLoading] = useState(true);
+  const URL = `http://localhost:5000/projects/${id}`;
 
   const [showEdit, setShowEdit] = useState(false);
-  const [projectName, setProjectName] = useState(title);
-  const [projectDescription, setProjectDescription] = useState(description);
-  const [projectType, setProjectType] = useState(type);
-  const [projectTerm, setProjectTerm] = useState(term);
-  const [projectQuests, setProjectQuests] = useState<string[]>(dependencies);
-  const [projectSkills, setProjectSkills] = useState<string[]>(skillsInvolved);
+  const [projectName, setProjectName] = useState(project.title);
+  const [projectDescription, setProjectDescription] = useState(
+    project.description
+  );
+  const [projectType, setProjectType] = useState(project.type);
+  const [projectTerm, setProjectTerm] = useState(project.term);
+  const [projectQuests, setProjectQuests] = useState<string[]>(
+    project.dependencies
+  );
+  const [projectSkills, setProjectSkills] = useState<string[]>(
+    project.skillsInvolved
+  );
 
   const toggleShowEdit = () => {
     setShowEdit(!showEdit);
   };
 
-  const getDate = () => {
-    let date = new Date(startDate);
-    const day = date.getUTCDay();
-    const month = date.getUTCMonth();
-    const year = date.getUTCFullYear();
-    return `${day}/${month}/${year}`;
-  };
+  // const getDate = () => {
+  //   let date = new Date(startDate);
+  //   const day = date.getUTCDay();
+  //   const month = date.getUTCMonth();
+  //   const year = date.getUTCFullYear();
+  //   return `${day}/${month}/${year}`;
+  // };
+
+   useEffect(() => {
+     isMounted.current = true;
+     axios.get(URL).then((res) => {
+       if (isMounted.current) {
+         setProject(res.data);
+         setTimeout(() => {
+           if (isMounted.current) {
+             setLoading(false);
+           }
+         }, 500);
+       }
+     });
+
+     return () => {
+       isMounted.current = false;
+     };
+   }, []);
 
   useEffect(() => {
-    skillsInvolved.sort((a, b) => a.length - b.length);
-  }, [skillsInvolved]);
+    project.skillsInvolved.sort((a, b) => a.length - b.length);
+  }, [project.skillsInvolved]);
 
   return (
     <div className="project-details-page">
@@ -58,11 +81,9 @@ function Project() {
               name={projectName}
               type={projectType}
               term={projectTerm}
-              icon={icon}
               description={projectDescription}
               quests={projectQuests}
               skillsInvolved={projectSkills}
-              date={getDate()}
               setProjectName={setProjectName}
               setProjectType={setProjectType}
               setProjectTerm={setProjectTerm}
@@ -74,11 +95,9 @@ function Project() {
             <ProjectDetails
               title={projectName}
               term={projectTerm}
-              icon={icon}
               description={projectDescription}
               dependencies={projectQuests}
               skills={projectSkills}
-              date={getDate()}
             />
           )}
 
@@ -86,11 +105,13 @@ function Project() {
             <div className="progress-wrapper">
               <div className="progress-header">
                 <div className="label">Progress: </div>
-                <div className="logs-btn"><Link to="/logs">Logs</Link></div>
+                <div className="logs-btn">
+                  <Link to="/logs">Logs</Link>
+                </div>
               </div>
               <ProgressBar
-                now={progress}
-                label={`${progress}%`}
+                now={project.progress}
+                label={`${project.progress}%`}
                 className="progress-bar-container"
               />
             </div>

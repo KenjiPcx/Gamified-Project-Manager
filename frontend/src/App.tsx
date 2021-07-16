@@ -21,9 +21,9 @@ function App() {
         <Switch>
           <Route exact path="/" component={Dashboard} />
           <Route path="/projectlist" component={ProjectsList} />
-          <Route path="/project" component={Project} />
+          <Route path="/project/:id" component={Project} />
           <Route path="/questlist" component={QuestList} />
-          <Route path="/quest" component={Quest} />
+          <Route path="/quest/:id" component={Quest} />
           <Route path="/logs" component={Logs} />
           <Route path="/rewards" component={RewardsShop} />
           <Route path="/user" component={UserPage} />

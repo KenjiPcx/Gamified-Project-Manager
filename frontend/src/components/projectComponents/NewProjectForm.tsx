@@ -58,6 +58,7 @@ function NewProjectForm({
     });
 
     const project: ProjectObj = {
+      _id: "",
       title: projectName,
       type: projectType,
       term: projectTerm,
@@ -65,7 +66,6 @@ function NewProjectForm({
       dependencies: quests.map((quest) => quest.name),
       progress: 0,
       status: "Initialized Project",
-      startDate: Date.now(),
       skillsInvolved: skills,
     };
     updateProjects((prevProjects) => [...prevProjects, project]);

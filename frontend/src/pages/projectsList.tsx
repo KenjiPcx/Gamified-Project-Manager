@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-
-// Components
+import React, { useState, useEffect, useRef } from "react";
 import ListHeader from "../components/headers/ListHeader";
 import ProjectsListItem from "../components/projectComponents/ProjectsListItem";
 import ProjectsData, {
@@ -10,14 +8,37 @@ import NewProjectForm from "../components/projectComponents/NewProjectForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "react-bootstrap";
+import axios from "axios";
+import Spinner from "react-bootstrap/Spinner";
 
 function ProjectsList() {
+  const isMounted = useRef<boolean | null>(null);
+  const URL = "http://localhost:5000/projects/";
+  const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState(ProjectsData);
   const [filteredProjects, setFilteredProjects] = useState(ProjectsData);
   const [type, setType] = useState("All");
   const [search, setSearch] = useState("");
   const [term, setTerm] = useState("All");
   const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    isMounted.current = true;
+    axios.get(URL).then((res) => {
+      if (isMounted.current) {
+        setProjects(res.data);
+        setTimeout(() => {
+          if (isMounted.current) {
+            setLoading(false);
+          }
+        }, 500);
+      }
+    });
+
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
 
   useEffect(() => {
     setFilteredProjects(searchFilter(termFilter(typeFilter(projects))));
@@ -78,49 +99,58 @@ function ProjectsList() {
       />
       <div className="main-content">
         <div className="project-list-container">
-          <div className={show ? "hide" : "project-list"}>
-            <div className="list-controls">
-              <div
-                className={`ongoing ${type === "Ongoing" ? "active" : ""}`}
-                onClick={() => resetType("Ongoing")}
-              >
-                Ongoing
+          {loading ? (
+            <Spinner animation="border" className="spinner"></Spinner>
+          ) : (
+            <>
+              <div className={show ? "hide" : "project-list"}>
+                <div className="list-controls">
+                  <div
+                    className={`ongoing ${type === "Ongoing" ? "active" : ""}`}
+                    onClick={() => resetType("Ongoing")}
+                  >
+                    Ongoing
+                  </div>
+                  <div
+                    className={`completed ${
+                      type === "Completed" ? "active" : ""
+                    }`}
+                    onClick={() => resetType("Completed")}
+                  >
+                    Completed
+                  </div>
+                  <Button
+                    variant="success"
+                    className="add-btn"
+                    onClick={toggleShow}
+                  >
+                    <FontAwesomeIcon icon={faPlus} className="icon" />
+                  </Button>
+                </div>
+                <div className="list">
+                  {filteredProjects.map((project, key) => {
+                    return (
+                      <ProjectsListItem
+                        id={project._id}
+                        type={project.type}
+                        title={project.title}
+                        description={getShortDesc(project.description)}
+                        status={project.status}
+                        progress={project.progress}
+                        key={key}
+                        removeHandler={removeProject}
+                      />
+                    );
+                  })}
+                </div>
               </div>
-              <div
-                className={`completed ${type === "Completed" ? "active" : ""}`}
-                onClick={() => resetType("Completed")}
-              >
-                Completed
-              </div>
-              <Button
-                variant="success"
-                className="add-btn"
-                onClick={toggleShow}
-              >
-                <FontAwesomeIcon icon={faPlus} className="icon" />
-              </Button>
-            </div>
-            <div className="list">
-              {filteredProjects.map((project, key) => {
-                return (
-                  <ProjectsListItem
-                    type={project.type}
-                    title={project.title}
-                    description={getShortDesc(project.description)}
-                    status={project.status}
-                    progress={project.progress}
-                    key={key}
-                    removeHandler={removeProject}
-                  />
-                );
-              })}
-            </div>
-          </div>
-          <NewProjectForm
-            show={show}
-            toggleShow={toggleShow}
-            updateProjects={setProjects}
-          />
+              <NewProjectForm
+                show={show}
+                toggleShow={toggleShow}
+                updateProjects={setProjects}
+              />
+            </>
+          )}
         </div>
       </div>
     </div>

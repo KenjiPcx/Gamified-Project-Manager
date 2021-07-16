@@ -6,7 +6,8 @@ const {
     getAllProjects,
     getProjectById,
     updateProjectById,
-    deleteProjectById
+    deleteProjectById,
+    deleteAllProjects
 } = require("./controllers")
 
 // Get All
@@ -26,5 +27,8 @@ router.delete("/:id", deleteProjectById);
 
 // Create Batch
 router.post("/createProjects", createProjects);
+
+// Delete All
+router.delete("/", deleteAllProjects);
 
 module.exports = router;

@@ -5,6 +5,8 @@ import {
   faCode,
   faDumbbell,
   faBroom,
+  faUserGraduate,
+  faFistRaised
 } from "@fortawesome/free-solid-svg-icons";
 
 export const generateRewards = (diff: string) => {
@@ -33,3 +35,9 @@ export const getIcon = (category: string) => {
   if (category === "Fitness") return <FontAwesomeIcon icon={faDumbbell} />;
   if (category === "Chore") return <FontAwesomeIcon icon={faBroom} />;
 };
+
+export const getProjectIcon = (type: string) => {
+  if (type === "Project") return <FontAwesomeIcon icon={faUserGraduate} />;
+  if (type === "Fitness") return <FontAwesomeIcon icon={faFistRaised} />;
+  if (type === "Coding") return <FontAwesomeIcon icon={faCode} />;
+}

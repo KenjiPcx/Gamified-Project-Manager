@@ -6,6 +6,7 @@ interface RewardsObj {
 }
 
 export interface QuestObj {
+  _id: string;
   name: string;
   category: string;
   type: string;
@@ -17,14 +18,33 @@ export interface QuestObj {
   rewards: RewardsObj;
 }
 
+export const BlankQuest = {
+  _id: "0",
+  name: "",
+  type: "",
+  series: "",
+  category: "",
+  diff: "",
+  description:
+    "",
+  clearConditions: [""],
+  skills: [""],
+  rewards: {
+    gold: 0,
+    exp: 0,
+  },
+};
+
 const QuestsData: QuestObj[] = [
   {
+    _id: "1",
     name: "Plan Project",
     type: "Main",
     series: "Project Data",
     category: "Studies",
     diff: "C",
-    description: "Planning is essential for smooth work down the line. Plan the project. ",
+    description:
+      "Planning is essential for smooth work down the line. Plan the project. ",
     clearConditions: ["Plan frontend", "Plan backend"],
     skills: ["Brain Power", "Management"],
     rewards: {
@@ -33,6 +53,7 @@ const QuestsData: QuestObj[] = [
     },
   },
   {
+    _id: "1",
     name: "Design Project",
     type: "Main",
     series: "Project Data",
@@ -47,6 +68,7 @@ const QuestsData: QuestObj[] = [
     },
   },
   {
+    _id: "1",
     name: "Build Project",
     type: "Main",
     series: "Project Data",
@@ -61,6 +83,7 @@ const QuestsData: QuestObj[] = [
     },
   },
   {
+    _id: "1",
     name: "Pushup x20",
     type: "Daily",
     series: "Basic Fitness",
@@ -75,6 +98,7 @@ const QuestsData: QuestObj[] = [
     },
   },
   {
+    _id: "1",
     name: "Clean Room",
     type: "Weekly",
     series: "Chore",
@@ -89,6 +113,7 @@ const QuestsData: QuestObj[] = [
     },
   },
   {
+    _id: "1",
     name: "Job",
     type: "Weekly",
     series: "Life Goals",

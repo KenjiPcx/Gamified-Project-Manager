@@ -46,6 +46,7 @@ function NewQuestForm({ show, toggleShow, updateQuests }: NewQuestFormProps) {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const quest: QuestObj = {
+      _id: "",
       name: questName,
       type: questType,
       series: "Project",
