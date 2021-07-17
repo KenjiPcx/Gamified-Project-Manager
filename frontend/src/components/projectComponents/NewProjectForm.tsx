@@ -10,6 +10,7 @@ import NewQuestForm from "./NewQuestForm";
 import Pill from "../customUIComponents/Pill";
 import { ProjectObj } from "./ProjectsListData";
 import { QuestObj } from "../questComponents/QuestListData";
+import axios from "axios";
 
 interface NewProjectFormProps {
   show: boolean;
@@ -22,6 +23,8 @@ function NewProjectForm({
   toggleShow,
   updateProjects,
 }: NewProjectFormProps) {
+  const ProjectURL = `http://localhost:5000/projects/`;
+  const QuestURL = `http://localhost:5000/quests/`;
   const [projectName, setProjectName] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
   const [projectType, setProjectType] = useState("");
@@ -54,6 +57,11 @@ function NewProjectForm({
 
     let skills: string[] = [];
     quests.forEach((quest) => {
+      axios.post(QuestURL, quest).then(() => {
+        console.log("success")
+      }).catch((err) => {
+        console.log(err);
+      });
       skills = [...skills, ...quest.skills];
     });
 
@@ -67,16 +75,25 @@ function NewProjectForm({
       progress: 0,
       status: "Initialized Project",
       skillsInvolved: skills,
+      createdAt: "",
     };
-    updateProjects((prevProjects) => [...prevProjects, project]);
-    toggleShow();
+    console.log(project)
+    axios
+      .post(ProjectURL, project)
+      .then(() => {
+        updateProjects((prevProjects) => [...prevProjects, project]);
+        toggleShow();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const disabled =
     projectName === "" &&
     (projectType === "Choose Type" || projectType === "") &&
     (projectTerm === "Choose Term" || projectType === "") &&
-    projectDescription === "" 
+    projectDescription === "";
 
   useEffect(() => {
     if (!show) {
@@ -160,7 +177,7 @@ function NewProjectForm({
                   onChange={(e) => setProjectType(e.target.value)}
                 >
                   <option>Choose Type</option>
-                  <option>Projects</option>
+                  <option>Project</option>
                   <option>Coding</option>
                   <option>Fitness</option>
                   <option>Academic</option>

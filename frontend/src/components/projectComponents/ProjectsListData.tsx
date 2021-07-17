@@ -11,12 +11,12 @@ export interface ProjectObj {
   skillsInvolved: string[];
   progress: number;
   status: string;
-  createdAt?: string;
+  createdAt: string;
   updatedAt?: string;
   _v?: string;
 }
 
-export const BlankProject = {
+export const BlankProject: ProjectObj = {
   _id: "Blank",
   title: "Blank",
   type: "Blank",
@@ -26,6 +26,7 @@ export const BlankProject = {
   skillsInvolved: ["Blank"],
   progress: 0,
   status: "Blank",
+  createdAt: ""
 };
 
 const ProjectsData: ProjectObj[] = [
@@ -52,6 +53,7 @@ const ProjectsData: ProjectObj[] = [
     ],
     progress: 20,
     status: "Building",
+    createdAt: "",
   },
   {
     _id: "Preset",
@@ -63,6 +65,7 @@ const ProjectsData: ProjectObj[] = [
     skillsInvolved: [],
     progress: 25,
     status: "Building",
+    createdAt: "",
   },
   {
     _id: "Preset",
@@ -74,6 +77,7 @@ const ProjectsData: ProjectObj[] = [
     skillsInvolved: [],
     progress: 20,
     status: "Building",
+    createdAt: "",
   },
   {
     _id: "Preset",
@@ -85,6 +89,7 @@ const ProjectsData: ProjectObj[] = [
     skillsInvolved: [],
     progress: 10,
     status: "Building",
+    createdAt: "",
   },
   {
     _id: "Preset",
@@ -96,6 +101,7 @@ const ProjectsData: ProjectObj[] = [
     skillsInvolved: [],
     progress: 30,
     status: "Building",
+    createdAt: "",
   },
   {
     _id: "Preset",
@@ -107,6 +113,7 @@ const ProjectsData: ProjectObj[] = [
     skillsInvolved: [],
     progress: 100,
     status: "Building",
+    createdAt: "",
   },
 ];
 

@@ -13,12 +13,14 @@ interface UpdateProjectFormProps {
   icon?: JSX.Element;
   description: string;
   quests: string[];
+  newQuests: QuestObj[];
   skillsInvolved: string[];
   setProjectName: React.Dispatch<React.SetStateAction<string>>;
   setProjectDescription: React.Dispatch<React.SetStateAction<string>>;
   setProjectType: React.Dispatch<React.SetStateAction<string>>;
   setProjectTerm: React.Dispatch<React.SetStateAction<string>>;
   setProjectQuests: React.Dispatch<React.SetStateAction<string[]>>;
+  setNewQuests: React.Dispatch<React.SetStateAction<QuestObj[]>>;
   setProjectSkills: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
@@ -29,16 +31,17 @@ function UpdateProjectForm({
   icon,
   description,
   quests,
+  newQuests,
   skillsInvolved,
   setProjectName,
   setProjectDescription,
   setProjectType,
   setProjectTerm,
   setProjectQuests,
+  setNewQuests,
   setProjectSkills,
 }: UpdateProjectFormProps) {
   const [showQuestForm, setShowQuestForm] = useState(false);
-  const [newQuests, setNewQuests] = useState<QuestObj[]>([]);
 
   const toggleShow = () => {
     setShowQuestForm(!showQuestForm);
@@ -94,7 +97,7 @@ function UpdateProjectForm({
               value={type}
               onChange={(e) => setProjectType(e.target.value)}
             >
-              <option>Projects</option>
+              <option>Project</option>
               <option>Coding</option>
               <option>Fitness</option>
               <option>Academic</option>

@@ -71,7 +71,6 @@
       .highlight {
         width: 2.5%;
         height: 100%;
-        background-color: $primary-color;
         border-radius: 1rem 0 0 1rem;
       }
 
@@ -99,7 +98,6 @@
             padding: 0.75rem 0.5rem;
             width: max-content;
             height: 20%;
-            background-color: $primary-color;
             color: white;
             border-radius: 0.5rem;
             display: flex;
@@ -144,9 +142,36 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #ffffff;
+      }
+
+      .Project {
+        .CircularProgressbar-text {
+          fill: #6e5ae0;
+        }
 
         .CircularProgressbar-path {
-          stroke: $primary-color;
+          stroke: #6e5ae0;
+        }
+      }
+
+      .Coding {
+        .CircularProgressbar-text {
+          fill: #396bc9;
+        }
+
+        .CircularProgressbar-path {
+          stroke: #396bc9;
+        }
+      }
+
+      .Fitness {
+        .CircularProgressbar-text {
+          fill: #22b9a5;
+        }
+
+        .CircularProgressbar-path {
+          stroke: #22b9a5;
         }
       }
     }

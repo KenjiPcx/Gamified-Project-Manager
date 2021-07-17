@@ -3,7 +3,9 @@ import Pill from "../customUIComponents/Pill";
 
 interface ProjectDetailsProps {
   title: string;
+  type: string;
   icon?: JSX.Element;
+  date: string;
   term: string;
   description: string;
   dependencies: string[];
@@ -12,7 +14,9 @@ interface ProjectDetailsProps {
 
 function ProjectDetails({
   title,
+  type,
   icon,
+  date,
   term,
   description,
   dependencies,
@@ -23,11 +27,11 @@ function ProjectDetails({
       <div className="project-details">
         <div className="project-header">
           <div className="project-title">{title}</div>
-          <div className="project-icon">{icon}</div>
+          <div className={`project-icon ${type}`}>{icon}</div>
         </div>
         <div className="project-date">
           <div className="label">Date Started:</div>
-          {/* {date} */}
+          {date}
         </div>
         <div className="project-term">
           <div className="label">Term:</div>

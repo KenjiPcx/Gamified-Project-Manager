@@ -3,6 +3,7 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 interface ProjectsListItemProps {
   id: string;
@@ -18,13 +19,13 @@ function ProjectsListItem({
   id,
   title,
   type,
-  description,
   progress,
   status,
   removeHandler,
 }: ProjectsListItemProps) {
   let history = useHistory();
   let timer: NodeJS.Timeout | null = null;
+  const URL = `http://localhost:5000/projects/${id}`;
   const [showDelete, setShowDelete] = useState(false);
   const touching = useRef(false);
 
@@ -36,8 +37,12 @@ function ProjectsListItem({
     }
   };
 
-  const handleClick = (e: TouchEvent<HTMLDivElement>) => {
+  const handleDelete = (e: TouchEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     removeHandler(title);
+    axios.delete(URL).then(() => {
+      history.push("/projectlist");
+    });
   };
 
   const handleLongPressStart = () => {
@@ -64,20 +69,20 @@ function ProjectsListItem({
       onTouchEnd={handleLongPressEnd}
       onClick={handleRedirect}
     >
-      <div className="highlight"></div>
+      <div className={`highlight ${type}`}></div>
       <div className="project-info">
         <div className="wrapper">
-          <div className="project-type">{type}</div>
+          <div className={`project-type ${type}`}>{type}</div>
           <div className="project-title">{title}</div>
         </div>
         <div className="project-status">Status: {status}</div>
       </div>
-      <div className="project-progress">
+      <div className={`project-progress ${type}`}>
         <CircularProgressbar value={progress} text={`${progress}%`} />
       </div>
       <div
         className={`${showDelete ? "delete-btn" : "hide"}`}
-        onTouchStart={(e) => handleClick(e)}
+        onTouchStart={(e) => handleDelete(e)}
       >
         <FontAwesomeIcon icon={faTimes} />
       </div>

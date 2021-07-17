@@ -26,6 +26,18 @@
   background-color: #e0b352;
 }
 
+.Project {
+  background-color: #6e5ae0;
+}
+
+.Coding {
+  background-color: #396bc9;
+}
+
+.Fitness {
+  background-color: #22b9a5;
+}
+
 .header {
   width: 100vw;
   height: 9vh;
@@ -745,7 +757,6 @@
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item .highlight {
   width: 2.5%;
   height: 100%;
-  background-color: #3278ff;
   border-radius: 1rem 0 0 1rem;
 }
 
@@ -795,7 +806,6 @@
   width: -moz-max-content;
   width: max-content;
   height: 20%;
-  background-color: #3278ff;
   color: white;
   border-radius: 0.5rem;
   display: -webkit-box;
@@ -850,10 +860,31 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #ffffff;
 }
 
-.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .project-progress .CircularProgressbar-path {
-  stroke: #3278ff;
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .Project .CircularProgressbar-text {
+  fill: #6e5ae0;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .Project .CircularProgressbar-path {
+  stroke: #6e5ae0;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .Coding .CircularProgressbar-text {
+  fill: #396bc9;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .Coding .CircularProgressbar-path {
+  stroke: #396bc9;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .Fitness .CircularProgressbar-text {
+  fill: #22b9a5;
+}
+
+.project-list-page .main-content .project-list-container .project-list .list .projects-list-item .Fitness .CircularProgressbar-path {
+  stroke: #22b9a5;
 }
 
 .project-list-page .main-content .project-list-container .project-list .list .projects-list-item:last-child {
@@ -1156,6 +1187,9 @@
 .project-details-page .main-content .project-details-container .project-details-main .project-details .project-header .project-title {
   font-size: 2.35rem;
   font-weight: bold;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 75%;
 }
 
 .project-details-page .main-content .project-details-container .project-details-main .project-details .project-header .form-control {
@@ -1163,18 +1197,22 @@
 }
 
 .project-details-page .main-content .project-details-container .project-details-main .project-details .project-header .project-icon {
-  background-color: #3278ff;
   border-radius: 50%;
-  padding: 0.65rem;
+  padding: 1.75rem;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.project-details-page .main-content .project-details-container .project-details-main .project-details .project-header .project-icon .icon {
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  font-size: 1.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .project-details-page .main-content .project-details-container .project-details-main .project-details .project-type {
