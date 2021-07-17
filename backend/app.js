@@ -9,6 +9,7 @@ const port = process.env.PORT || 5000;
 // Routes
 const questRoutes = require("./quests/routes");
 const projectRoutes = require("./projects/routes");
+const userRoutes = require("./user/routes");
 
 // Middlewares
 const app = express();
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/quests", questRoutes);
 app.use("/projects", projectRoutes);
+app.use("/user", userRoutes)
 
 // Connect to DB
 mongoose

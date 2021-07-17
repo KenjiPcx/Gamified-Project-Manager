@@ -9,7 +9,7 @@ interface UserObj {
   name: string;
   job: string;
   title: string;
-  profilePic: JSX.Element;
+  profilePic?: JSX.Element;
   level: {
     level: number;
     exp: number;
@@ -34,7 +34,7 @@ function UserPage() {
     name: "Kenji Phang",
     job: "CS Student",
     title: "The Creator",
-    profilePic: <Image src={ProfilePic} roundedCircle className="pic" />,
+    // profilePic: <Image src={ProfilePic} roundedCircle className="pic" />,
     level: {
       level: 100,
       exp: 100070,
@@ -54,6 +54,7 @@ function UserPage() {
     },
   };
 
+  console.log(JSON.stringify(user));
   const {
     name,
     job,
