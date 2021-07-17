@@ -9,8 +9,16 @@ const getUser = async (req, res) => {
   }
 };
 
+const getMainUser = async (req, res) => {
+  try {
+    const user = await User.findOne({ userName: "Kenji Phang" });
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(400).json({ err: "Failed to find user" });
+  }
+};
+
 const createUser = async (req, res) => {
-    console.log(req.body)
   try {
     const user = User({
       userName: req.body.name,
@@ -28,4 +36,20 @@ const createUser = async (req, res) => {
   }
 };
 
-module.exports = { getUser, createUser };
+const updateGold = async (req, res) => {
+  try {
+    const user = await User.updateOne(
+      { userName: "Kenji Phang" },
+      {
+        $set: {
+          wallet: req.body.wallet,
+        },
+      }
+    );
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(400).json({ err: "Failed to update gold" });
+  }
+};
+
+module.exports = { getUser, createUser, getMainUser, updateGold };

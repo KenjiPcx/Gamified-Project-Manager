@@ -20,6 +20,7 @@ const userSchema = new Schema({
     projectsCompleted: Number,
     questsCompleted: Number,
   },
+  wallet: { type: Object, gold: Number },
 });
 
 const User = mongoose.model("User", userSchema);

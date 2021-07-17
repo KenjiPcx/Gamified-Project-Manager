@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "../components/headers/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGifts } from "@fortawesome/free-solid-svg-icons";
@@ -9,12 +9,27 @@ import ProductObj, {
   HolidayProducts,
   EntertainmentProducts,
 } from "../components/rewardsShop/ProductData";
+import axios from "axios";
 
 function RewardsShop() {
+  const getGoldURL = `http://localhost:5000/user/`;
+  const isMounted = useRef<boolean | null>(null);
   const [scroll, setScroll] = useState(document.querySelector(".shop-body"));
-  const [balance, setBalance] = useState(1000000);
+  const [balance, setBalance] = useState(0);
   const [pageNo, setPageNo] = useState(1);
   const pages = [1, 2, 3, 4];
+
+  useEffect(() => {
+    isMounted.current = true;
+    axios.get(getGoldURL).then((res) => {
+      if (isMounted.current) {
+        setBalance(res.data.wallet.gold);
+      }
+    });
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
 
   const productMapper = (productList: ProductObj[]) => {
     return (

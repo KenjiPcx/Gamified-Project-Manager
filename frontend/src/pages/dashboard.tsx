@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import QuestsData from "../components/questComponents/QuestListData";
 import ShortcutData from "../components/dashboard/ShortcutsData";
 import QuestBlock from "../components/dashboard/QuestBlock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 function Dashboard() {
-  const username = "Kenji";
-  const level = 100;
-  const points = 10000;
+  const isMounted = useRef<boolean | null>(null);
+  const URL = `http://localhost:5000/user/`;
+
+  const [username, setUsername] = useState("");
+  const [level, setLevel] = useState(0);
+  const [points, setPoints] = useState(0);
   const appVers = "v0.0";
   const appAge = 0;
   const shortcuts = ShortcutData;
   const quests = QuestsData;
 
+  const getFirstName = (name: string) => {
+    const index = name.indexOf(" ");
+    return name.substring(0, index);
+  };
+
+  useEffect(() => {
+    isMounted.current = true;
+    axios
+      .get(URL)
+      .then((res) => {
+        if (isMounted.current) {
+          setUsername(getFirstName(res.data.userName));
+          setLevel(res.data.level.level);
+          setPoints(res.data.wallet.gold);
+        }
+      })
+      .catch(console.log);
+    return () => {
+      isMounted.current = false;
+    };
+  });
+  
   return (
     <div className="dashboard-page">
       <div className="dashboard-header">

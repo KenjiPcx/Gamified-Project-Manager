@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import axios from "axios";
 
 interface ProductItemProps {
   name: string;
@@ -17,14 +18,20 @@ function ProductItem({
   balance,
   setBalance,
 }: ProductItemProps) {
+  const updateGoldURL = `http://localhost:5000/user/updateGold`;
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const handleConfirm = () => {
     let newBalance = balance - price;
-    setBalance(newBalance);
-    handleClose();
+    axios
+      .patch(updateGoldURL, { wallet: { gold: newBalance } })
+      .then(() => {
+        setBalance(newBalance);
+        handleClose();
+      })
+      .catch(console.log);
   };
 
   return (
